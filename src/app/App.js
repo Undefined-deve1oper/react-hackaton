@@ -1,25 +1,11 @@
 import React from "react";
-import Home from "./layouts/Home";
-import "./scss/app.scss";
-import {useRoutes} from "react-router-dom";
-import NavBar from "./components/ui/NavBar";
+import { useRoutes } from "react-router-dom";
 import routes from "./router";
-
+import "./scss/app.scss";
 
 const App = () => {
-<<<<<<< HEAD
-    return <Home />;
-=======
-    const element = useRoutes(routes())
-    return (
-        <>
-            <NavBar/>
-            <main>
-                {element}
-            </main>
-        </>
-    )
->>>>>>> 35fd01c8dab2bc56558d2dccc0a28f53823e4a49
+    const element = useRoutes(routes());
+    return element;
 };
 
 export default App;
