@@ -3,11 +3,7 @@ import Test from "./layouts/Test";
 import "./scss/app.scss";
 
 const App = () => {
-    return (
-        <div>
-            <Test />
-        </div>
-    );
+    return <div>Hello world</div>;
 };
 
 export default App;
