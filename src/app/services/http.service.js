@@ -5,6 +5,19 @@ const http = axios.create({
     baseURL: configFile.apiEndpoint
 });
 
+http.interceptors.request.use(
+    async function (config) {
+        if (configFile.isFireBase) {
+            const containSlash = /\/$/gi.test(config.url);
+            config.url =
+                (containSlash ? config.url.slice(0, -1) : config.url) + ".json";
+        }
+        return config;
+    },
+    function (error) {
+        return Promise.reject(error);
+    }
+);
 function transformData(data) {
     return data && !data.id
         ? Object.keys(data).map((key) => ({
