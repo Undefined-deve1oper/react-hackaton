@@ -1,16 +1,18 @@
 import React from "react";
+import Container from "../components/common/Container/Container";
 import HomePage from "../components/pages/HomePage";
 
-const main = () => {
+const Home = () => {
     return (
         <>
             {/* <NavBar/> */}
-            <main className="page">
+            <Container>
+                {/* <BreadCrumbs /> */}
                 <HomePage />
-            </main>
+            </Container>
             {/* <Footer/> */}
         </>
     );
 };
 
-export default main;
+export default Home;
