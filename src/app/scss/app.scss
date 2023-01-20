@@ -1,0 +1,49 @@
+@import "./mixins";
+@import "./variables";
+@import "./components";
+@import "./fonts/fonts";
+@import "./null";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    -webkit-tap-highlight-color: transparent;
+    font-weight: 600;
+
+    &.lock {
+        overflow: hidden;
+    }
+}
+
+#root {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+._container {
+    max-width: $maxWidthContainer + px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.page {
+    flex: 1 1 auto;
+}
+
+._ibg {
+    position: relative;
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+}
