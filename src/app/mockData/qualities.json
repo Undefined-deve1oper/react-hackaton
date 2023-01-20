@@ -1,0 +1,23 @@
+[
+    { "id": "67rdca3eeb7f6fgeed471100", "color": "red", "name": "Тимлид" },
+    {
+        "id": "67rdca3eeb7f6fgeed471101",
+        "color": "blue",
+        "name": "Разработчик"
+    },
+    {
+        "id": "67rdca3eeb7f6fgeed4711012",
+        "color": "green",
+        "name": "Команда 2"
+    },
+    {
+        "id": "67rdca3eeb7f6fgeed471102",
+        "color": "violet",
+        "name": "Душа компании"
+    },
+    {
+        "id": "67rdca3eeb7f6fgeed471103",
+        "color": "black",
+        "name": "Мотиватор"
+    }
+]
