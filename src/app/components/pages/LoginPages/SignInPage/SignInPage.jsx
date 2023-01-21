@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../../../common/Logo";
 import StyledNavLink from "../../../common/StyledNavLink";
+import SignInForm from "../../../ui/Forms/Login/SignInForm/SignInForm";
 import withStyledFormComponent from "../../../ui/HOC/withStyledFormComponent";
 
 const SignInPage = () => {
@@ -27,62 +28,7 @@ const SignInPage = () => {
                         Создать аккаунт
                     </StyledNavLink>
                 </p>
-                <form
-                    action="#"
-                    method="POST"
-                    className="signupForm"
-                    name="signupform"
-                >
-                    <ul className="noBullet">
-                        <li>
-                            <label htmlFor="username"></label>
-                            <input
-                                type="text"
-                                className="inputFields"
-                                id="username"
-                                name="username"
-                                placeholder="Username"
-                                value=""
-                                onInput="return userNameValidation(this.value)"
-                                required
-                            />
-                        </li>
-                        <li>
-                            <label htmlFor="password"></label>
-                            <input
-                                type="password"
-                                className="inputFields"
-                                id="password"
-                                name="password"
-                                placeholder="Password"
-                                value=""
-                                onInput="return passwordValidation(this.value)"
-                                required
-                            />
-                        </li>
-                        <li>
-                            <label htmlFor="email"></label>
-                            <input
-                                type="email"
-                                className="inputFields"
-                                id="email"
-                                name="email"
-                                placeholder="Email"
-                                value=""
-                                required
-                            />
-                        </li>
-                        <li id="center-btn">
-                            <input
-                                type="submit"
-                                id="join-btn"
-                                name="join"
-                                alt="Join"
-                                value="Join"
-                            />
-                        </li>
-                    </ul>
-                </form>
+                <SignInForm />
             </div>
         </>
     );

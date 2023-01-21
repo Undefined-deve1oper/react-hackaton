@@ -1,4 +1,4 @@
-.animate {
+.button {
     position: relative;
     min-width: 80px;
 
@@ -14,7 +14,6 @@
     & span {
         position: absolute;
         display: block;
-
         &:nth-child(1) {
             top: 0;
             left: -100%;
@@ -23,7 +22,6 @@
             background: linear-gradient(90deg, transparent, $infoColor);
             animation: btn-anim1 1s linear infinite;
         }
-
         &:nth-child(2) {
             top: -100%;
             right: 0;
@@ -33,7 +31,6 @@
             animation: btn-anim2 1s linear infinite;
             animation-delay: 0.25s;
         }
-
         &:nth-child(3) {
             bottom: 0;
             right: -100%;
@@ -43,7 +40,6 @@
             animation: btn-anim3 1s linear infinite;
             animation-delay: 0.5s;
         }
-
         &:nth-child(4) {
             bottom: -100%;
             left: 0;
@@ -109,36 +105,4 @@
     100% {
         bottom: 100%;
     }
-}
-
-.rounding {
-    border-radius: 40px;
-}
-
-.default {
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-
-    &:hover {
-        background: linear-gradient(90deg, transparent, $infoColor);
-    }
-}
-
-.none {
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
 }

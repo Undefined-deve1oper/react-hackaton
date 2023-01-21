@@ -33,7 +33,7 @@
 .login-form {
     width: 70%;
     padding: 30px 40px;
-    background: rgba(20, 40, 40, 0.8);
+    background: rgba(20, 40, 40, 0.4);
     transition: 0.2s;
     text-align: left;
     @media (max-width: $md) {
@@ -62,20 +62,6 @@
     &__password {
         margin-bottom: 30px;
     }
-}
-
-.inputFields {
-    margin: 15px 0;
-    font-size: 16px;
-    padding: 10px;
-    width: 250px;
-    border: 1px solid rgba(10, 180, 180, 1);
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    background: rgba(20, 20, 20, 0.2);
-    color: white;
-    outline: none;
 }
 
 .noBullet {
