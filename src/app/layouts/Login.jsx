@@ -5,12 +5,12 @@ import BreadCrumbs from "../components/common/BreadСrumbs";
 
 const Login = () => {
     return (
-        <>
+        <div>
             <Container>
                 <BreadCrumbs />
                 <Outlet />
             </Container>
-        </>
+        </div>
     );
 };
 

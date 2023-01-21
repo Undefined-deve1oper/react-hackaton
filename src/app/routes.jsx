@@ -1,12 +1,18 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 
-const Login = React.lazy(() => import("./layouts/Login"));
 const Home = React.lazy(() => import("./layouts/Home"));
 const Favorites = React.lazy(() => import("./layouts/Favourites"));
 const Developers = React.lazy(() => import("./layouts/Developers"));
 const DeveloperPage = React.lazy(() =>
     import("./components/pages/DeveloperPage")
+);
+const Login = React.lazy(() => import("./layouts/Login"));
+const SignUpPage = React.lazy(() =>
+    import("./components/pages/LoginPages/SignUpPage")
+);
+const SignInPage = React.lazy(() =>
+    import("./components/pages/LoginPages/SignInPage")
 );
 
 const routes = () => {
@@ -37,16 +43,16 @@ const routes = () => {
             element: <Login />,
             children: [
                 {
-                    path: "",
-                    element: <Navigate to="/" />
-                },
-                {
                     path: "signup",
-                    element: <Login />
+                    element: <SignUpPage />
                 },
                 {
                     path: "signin",
-                    element: <Login />
+                    element: <SignInPage />
+                },
+                {
+                    path: "",
+                    element: <Navigate to="/login/signup" />
                 }
             ]
         }

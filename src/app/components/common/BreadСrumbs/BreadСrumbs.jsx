@@ -1,10 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Container from "../Container";
 import StyledNavLink from "../StyledNavLink";
 import SvgIcon from "../SvgIcon/SvgIcon";
+import { useLocation } from "react-router-dom";
 
-const BreadСrumbs = ({ location }) => {
+const BreadСrumbs = () => {
+    const location = useLocation();
     const pathName = location.pathname;
     const arrayPathName = pathName.split("/").filter((x) => x);
     const breadcrumbsArray = arrayPathName.map((name, index) => {
@@ -36,10 +37,6 @@ const BreadСrumbs = ({ location }) => {
             </Container>
         </div>
     );
-};
-
-BreadСrumbs.propTypes = {
-    location: PropTypes.object.isRequired
 };
 
 export default BreadСrumbs;

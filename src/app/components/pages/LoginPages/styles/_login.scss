@@ -1,0 +1,99 @@
+.login-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+
+    // .login-info__logo
+    &__logo {
+        margin: 0px 0px 80px 0px;
+        @media (max-width: $md) {
+            margin: 0px 0px 15px 0px;
+        }
+    }
+
+    // .login-info__title
+    &__title {
+        font-size: 34px;
+        line-height: 1.5;
+        font-weight: 500;
+        margin: 0px 0px 80px 0px;
+        @media (max-width: $md) {
+            margin: 0px 0px 15px 0px;
+        }
+    }
+    // .login-info__text
+    &__text {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+}
+
+.login-form {
+    width: 70%;
+    padding: 30px 40px;
+    background: rgba(20, 40, 40, 0.8);
+    transition: 0.2s;
+    text-align: left;
+    @media (max-width: $md) {
+        padding: 0;
+    }
+
+    &__title {
+        font-size: 26px;
+        font-weight: 600;
+        margin: 0px 0px 20.5px 0px;
+    }
+
+    // .login-form__subtitle
+    &__subtitle {
+        margin: 0px 0px 30px 0px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        & a {
+            color: $infoColor;
+        }
+    }
+    &__email {
+        margin-bottom: 15px;
+    }
+    &__password {
+        margin-bottom: 30px;
+    }
+}
+
+.inputFields {
+    margin: 15px 0;
+    font-size: 16px;
+    padding: 10px;
+    width: 250px;
+    border: 1px solid rgba(10, 180, 180, 1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, 0.2);
+    color: white;
+    outline: none;
+}
+
+.noBullet {
+    list-style-type: none;
+    padding: 0;
+}
+
+#join-btn {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, 0.6);
+    font-size: 18px;
+    color: white;
+    margin-top: 20px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: 0.4s;
+    &:hover {
+        background: rgba(20, 20, 20, 0.8);
+        padding: 10px 80px;
+    }
+}
