@@ -21,7 +21,7 @@ const navLinks = [
 const Header = () => {
     const [isOpen, setOpen] = useState(false);
     const navigation = useNavigate();
-    const isLoggedIn = true;
+    const isLoggedIn = false;
 
     const handleToggleMenu = () => {
         setOpen((prevState) => !prevState);

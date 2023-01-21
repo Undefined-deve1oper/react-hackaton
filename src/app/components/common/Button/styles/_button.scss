@@ -1,108 +1,146 @@
-.button {
-    position: relative;
-    min-width: 80px;
+.animate {
+  position: relative;
+  min-width: 80px;
 
-    background: none;
-    color: #fff;
-    padding: 7px 15px;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 0.5s;
-    overflow: hidden;
-    letter-spacing: 4px;
+  background: none;
+  color: #fff;
+  padding: 7px 15px;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  overflow: hidden;
+  letter-spacing: 4px;
 
-    & span {
-        position: absolute;
-        display: block;
-        &:nth-child(1) {
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, $infoColor);
-            animation: btn-anim1 1s linear infinite;
-        }
-        &:nth-child(2) {
-            top: -100%;
-            right: 0;
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(180deg, transparent, $infoColor);
-            animation: btn-anim2 1s linear infinite;
-            animation-delay: 0.25s;
-        }
-        &:nth-child(3) {
-            bottom: 0;
-            right: -100%;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(270deg, transparent, $infoColor);
-            animation: btn-anim3 1s linear infinite;
-            animation-delay: 0.5s;
-        }
-        &:nth-child(4) {
-            bottom: -100%;
-            left: 0;
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(360deg, transparent, $infoColor);
-            animation: btn-anim4 1s linear infinite;
-            animation-delay: 0.75s;
-        }
+  & span {
+    position: absolute;
+    display: block;
+
+    &:nth-child(1) {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, $infoColor);
+      animation: btn-anim1 1s linear infinite;
     }
 
-    img {
-        width: 30px;
-        height: 30px;
+    &:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, $infoColor);
+      animation: btn-anim2 1s linear infinite;
+      animation-delay: 0.25s;
     }
 
-    @media (any-hover: hover) {
-        &:hover {
-            background: $infoColor;
-            color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 5px $infoColor, 0 0 25px $infoColor,
-                0 0 50px $infoColor, 0 0 100px $infoColor;
-        }
+    &:nth-child(3) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg, transparent, $infoColor);
+      animation: btn-anim3 1s linear infinite;
+      animation-delay: 0.5s;
     }
+
+    &:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, $infoColor);
+      animation: btn-anim4 1s linear infinite;
+      animation-delay: 0.75s;
+    }
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background: $infoColor;
+      color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 5px $infoColor, 0 0 25px $infoColor,
+      0 0 50px $infoColor, 0 0 100px $infoColor;
+    }
+  }
 }
 
 @keyframes btn-anim1 {
-    0% {
-        left: -100%;
-    }
-    50%,
-    100% {
-        left: 100%;
-    }
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
 }
 
 @keyframes btn-anim2 {
-    0% {
-        top: -100%;
-    }
-    50%,
-    100% {
-        top: 100%;
-    }
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
 }
 
 @keyframes btn-anim3 {
-    0% {
-        right: -100%;
-    }
-    50%,
-    100% {
-        right: 100%;
-    }
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
 }
 
 @keyframes btn-anim4 {
-    0% {
-        bottom: -100%;
-    }
-    50%,
-    100% {
-        bottom: 100%;
-    }
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
 }
+
+.rounding {
+  border-radius: 40px;
+}
+
+.default {
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(90deg, transparent, $infoColor);
+  }
+}
+
+
+.none {
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
