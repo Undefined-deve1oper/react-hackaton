@@ -12,7 +12,7 @@
 
     & img {
         width: 25px;
-        @media (max-width: $md4+px) {
+        @media (max-width: $xs) {
             width: 20px;
         }
     }

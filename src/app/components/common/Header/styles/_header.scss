@@ -7,16 +7,8 @@
         align-items: center;
         justify-content: center;
         min-height: 70px;
-        @media (max-width: $md3+px) {
+        @media (max-width: $md) {
             justify-content: space-between;
-        }
-    }
-
-    // .header__main-menu
-    &__main-menu {
-        flex: 1 1 auto;
-        @media (max-width: $md3+px) {
-            display: none;
         }
     }
 }
@@ -50,7 +42,7 @@
 
 .icon-menu {
     display: none;
-    @media (max-width: $md3+px) {
+    @media (max-width: $md) {
         @include adaptiv-value("margin-left", 32, 15, 1);
         display: block;
         position: relative;

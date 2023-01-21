@@ -1,13 +1,14 @@
 import React from "react";
-import Container from "../components/common/Container/Container";
+import Footer from "../components/common/Footer/Footer";
+import Header from "../components/common/Header/Header";
+import Main from "../components/common/Main";
 
 function Favorites() {
     return (
         <>
-            <Container>
-                {/* <BreadCrumbs /> */}
-                {/* Content */}
-            </Container>
+            <Header />
+            <Main>Favourites</Main>
+            <Footer />
         </>
     );
 }

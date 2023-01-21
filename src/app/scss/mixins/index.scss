@@ -17,7 +17,7 @@
     @if $type==1 {
         //Только если меньше контейнера
         #{$property}: $startSize + px;
-        @media (max-width: #{$maxWidthContainer + px}) {
+        @media (max-width: #{$maxWidthContainer}) {
             #{$property}: calc(
                 #{$minSize + px} + #{$addSize} *
                     ((100vw - 320px) / #{$maxWidthContainer - 320})
@@ -26,7 +26,7 @@
     } @else if $type==2 {
         //Только если больше контейнера
         #{$property}: $startSize + px;
-        @media (min-width: #{$maxWidthContainer + px}) {
+        @media (min-width: #{$maxWidthContainer}) {
             #{$property}: calc(
                 #{$minSize + px} + #{$addSize} *
                     ((100vw - 320px) / #{$maxWidth - 320})
