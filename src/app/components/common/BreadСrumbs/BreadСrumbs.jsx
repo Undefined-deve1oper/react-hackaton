@@ -1,13 +1,12 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import PropTypes from "prop-types";
-import './style.scss';
 /*
     Component call example
     const location = useLocation()
-    <BreadCrumbs location={location}/>
+    <BreadСrumbs location={location}/>
 * */
-const BreadCrumbs = ({location}) => {
+const BreadСrumbs = ({location}) => {
     const pathName = location.pathname
     const arrayPathName = pathName.split("/").filter(x => x);
     const breadcrumbsArray = arrayPathName.map((name, index) => {
@@ -28,8 +27,8 @@ const BreadCrumbs = ({location}) => {
     );
 };
 
-BreadCrumbs.propTypes = {
+BreadСrumbs.propTypes = {
     location: PropTypes.object.isRequired,
 }
 
-export default BreadCrumbs;
+export default BreadСrumbs;
