@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../../../common/Logo";
 import StyledNavLink from "../../../common/StyledNavLink";
+import withStyledFormComponent from "../../../ui/HOC/withStyledFormComponent";
 
 const SignInPage = () => {
     return (
@@ -29,41 +30,41 @@ const SignInPage = () => {
                 <form
                     action="#"
                     method="POST"
-                    class="signupForm"
+                    className="signupForm"
                     name="signupform"
                 >
-                    <ul class="noBullet">
+                    <ul className="noBullet">
                         <li>
-                            <label for="username"></label>
+                            <label htmlFor="username"></label>
                             <input
                                 type="text"
-                                class="inputFields"
+                                className="inputFields"
                                 id="username"
                                 name="username"
                                 placeholder="Username"
                                 value=""
-                                oninput="return userNameValidation(this.value)"
+                                onInput="return userNameValidation(this.value)"
                                 required
                             />
                         </li>
                         <li>
-                            <label for="password"></label>
+                            <label htmlFor="password"></label>
                             <input
                                 type="password"
-                                class="inputFields"
+                                className="inputFields"
                                 id="password"
                                 name="password"
                                 placeholder="Password"
                                 value=""
-                                oninput="return passwordValidation(this.value)"
+                                onInput="return passwordValidation(this.value)"
                                 required
                             />
                         </li>
                         <li>
-                            <label for="email"></label>
+                            <label htmlFor="email"></label>
                             <input
                                 type="email"
-                                class="inputFields"
+                                className="inputFields"
                                 id="email"
                                 name="email"
                                 placeholder="Email"
@@ -86,5 +87,5 @@ const SignInPage = () => {
         </>
     );
 };
-
-export default SignInPage;
+const StyledSignIpPage = withStyledFormComponent(SignInPage);
+export default StyledSignIpPage;
