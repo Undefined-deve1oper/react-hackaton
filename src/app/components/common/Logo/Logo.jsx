@@ -1,11 +1,11 @@
 import React from "react";
-import logoIcon from "../../../assets/svg/logo.svg";
 import { NavLink } from "react-router-dom";
+import SvgIcon from "../SvgIcon/SvgIcon";
 
 const Logo = () => {
     return (
         <NavLink to="/" className={"logo"} end>
-            <img src={logoIcon} alt="logo" />
+            <SvgIcon name="logo" width="25" height="24" />
             <div className="logo__info">
                 <span>React </span>
                 Team 2
