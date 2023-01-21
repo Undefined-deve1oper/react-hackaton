@@ -1,16 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Badge = ({ type, color }) => {
-    return (
-        <span style={{ backgroundColor: color }} className="badge">
-            {type}
-        </span>
-    );
+const Badge = ({ text, color }) => {
+    return <span className={`badge ${color}`}>{text}</span>;
+};
+
+Badge.defaultProps = {
+    text: "Красавчик",
+    color: "soft-blue"
 };
 
 Badge.propTypes = {
-    type: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired
 };
 
