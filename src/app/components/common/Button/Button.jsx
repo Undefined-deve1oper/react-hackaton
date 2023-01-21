@@ -14,6 +14,7 @@ const Button = ({children, styleType = 'animate', color = 'DarkMagenta', roundin
     );
 };
 
+
 Button.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.node,
