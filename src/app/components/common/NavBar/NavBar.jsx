@@ -4,6 +4,7 @@ import Logo from "../Logo";
 import StyledNavLink from "../StyledNavLink";
 import Button from "../Button/Button";
 import PhoneMenu from "../../ui/PhoneMenu/PhoneMenu";
+import { useNavigate } from "react-router-dom";
 
 const navLinks = [
     { path: "/", name: "Our team", id: 1 },
@@ -16,12 +17,16 @@ const navLinks = [
 
 function NavBar() {
     const [isOpen, setOpen] = useState(false);
+    const navigation = useNavigate();
 
     const handleToggleMenu = () => {
         setOpen((prevState) => !prevState);
     };
     const closeMenu = () => {
         setOpen(false);
+    };
+    const goLogin = () => {
+        navigation("/login/signin");
     };
 
     return (
@@ -45,7 +50,7 @@ function NavBar() {
                     </nav>
                     <div className={"header__actions actions-header"}>
                         <div className={"actions-header__button"}>
-                            <Button>Вход</Button>
+                            <Button onClick={goLogin}>Вход</Button>
                         </div>
                         <button
                             type="button"
