@@ -1,0 +1,100 @@
+.progress-bar {
+    width: 100%;
+    height: auto;
+    background: $mainColor;
+    border-radius: 5px;
+    &:not(:last-child) {
+        margin: 0px 0px 30px 0px;
+    }
+    user-select: none;
+
+    // .progress-bar__item
+    &__item {
+        height: 100%;
+        background: $infoColor;
+        border-radius: inherit;
+        padding: 10px 20px;
+        transition: width 1s ease-in-out;
+    }
+
+    // .progress-bar__label
+    &__label {
+        padding: 5px;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+}
+
+.circle-progress {
+    margin: 150px auto;
+    width: 150px;
+    height: 150px;
+    background: #fefcff;
+    border-radius: 50%;
+    border: 1px solid #cdcbd0;
+    position: relative;
+    
+}
+
+.circle-progress .circle .mask,
+.circle-progress .circle .fill {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle-progress .circle .mask {
+    clip: rect(0px, 150px, 150px, 75px);
+}
+
+.circle-progress .inside-circle {
+    width: 122px;
+    height: 122px;
+    border-radius: 50%;
+    background: $mainColor;
+    line-height: 120px;
+    text-align: center;
+    margin-top: 14px;
+    margin-left: 14px;
+    color: #fff;
+    position: absolute;
+    z-index: 100;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+/* color animation */
+
+/* 3rd progress bar */
+.mask .fill {
+    clip: rect(0px, 75px, 150px, 0px);
+    background-color: $infoColor;
+}
+
+.mask.full,
+.circle .fill {
+    animation: fill ease-in-out 1.5s;
+    transform: rotate(calc(1.8deg * var(--i)));
+    // transform: rotate(var(--i));
+}
+// .circle-progress {}
+.circle-progress__label {
+    position: absolute;
+   left: 30%;
+   top: 110%;
+   text-transform: uppercase;
+   font-weight: 400;
+}
+
+@keyframes fill {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(calc(1.8deg * var(--i)));
+    }
+}
+

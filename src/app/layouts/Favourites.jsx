@@ -1,16 +1,40 @@
-import React from "react";
-import Footer from "../components/common/Footer/Footer";
-import Header from "../components/common/Header/Header";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router";
+import BreadСrumbs from "../components/common/BreadСrumbs";
+import Container from "../components/common/Container";
+import Footer from "../components/common/Footer";
+import Header from "../components/common/Header";
 import Main from "../components/common/Main";
+import ProgressBar from "../components/common/ProgressBar";
 
-function Favorites() {
+const testData = [
+    { bgcolor: "#6a1b9a", completed: 25, title: "JS" },
+    { bgcolor: "#00695c", completed: 50, title: "React" },
+    { bgcolor: "#ef6c00", completed: 100, title: "Scss" }
+];
+
+const Favorites = () => {
+    const location = useLocation();
+
     return (
         <>
             <Header />
-            <Main>Favourites</Main>
+            <Main>
+                <BreadСrumbs location={location} />
+                <Container>
+                    {testData.map((item) => (
+                        <ProgressBar
+                            percentages={item.completed}
+                            color={item.bgcolor}
+                            title={item.title}
+                            // type
+                        />
+                    ))}
+                </Container>
+            </Main>
             <Footer />
         </>
     );
-}
+};
 
 export default Favorites;

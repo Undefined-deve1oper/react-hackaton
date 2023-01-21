@@ -19,9 +19,14 @@
         height: 50%;
 
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         flex-direction: column;
+        padding: 0px 15px;
+
+        @media (max-width: $xs) {
+            padding: 0px;
+        }
 
         & ul li {
             &:not(:last-child) {

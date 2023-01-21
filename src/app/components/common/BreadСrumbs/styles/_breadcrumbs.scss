@@ -1,8 +1,29 @@
 .breadcrumbs {
-  color: #ffffff;
-  border: 1px solid #736b6b;
-  background-color: #34240d;
-  border-radius: 10px;
-  margin: 0 2px;
-  padding: 0 7px;
+    width: 100%;
+    background: #fff;
+    padding: 15px 0px;
+
+    // .breadcrumbs__container
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5px;
+    }
+
+    // .breadcrumbs__item
+    &__item {
+        color: $mainColor;
+        letter-spacing: 2px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        & svg {
+            position: relative;
+            top: 0px;
+        }
+    }
 }

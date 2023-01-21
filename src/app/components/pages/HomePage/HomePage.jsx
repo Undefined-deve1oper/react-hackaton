@@ -1,12 +1,15 @@
 import React from "react";
-import SvgIcon from "../../common/SvgIcon/SvgIcon";
+import Advantages from "../../common/Advantages";
+import Container from "../../common/Container";
+import principlesBlock from "../../../config/principlesBlock.json";
+import clientsBlock from "../../../config/clientsBlock.json";
 
 const HomePage = () => {
     return (
-        <>
-            <section className="main-page">Контент страницы</section>
-            <SvgIcon name="logo" width="25" height="24" />
-        </>
+        <Container>
+            <Advantages {...principlesBlock} />
+            <Advantages {...clientsBlock} />
+        </Container>
     );
 };
 

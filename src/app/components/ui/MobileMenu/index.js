@@ -1,2 +1,2 @@
-import PhoneMenu from "./PhoneMenu";
-export default PhoneMenu;
+import MobileMenu from "./MobileMenu";
+export default MobileMenu;

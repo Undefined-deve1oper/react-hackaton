@@ -1,34 +1,45 @@
-import React from 'react';
-import {NavLink} from 'react-router-dom';
+import React from "react";
 import PropTypes from "prop-types";
-/*
-    Component call example
-    const location = useLocation()
-    <BreadСrumbs location={location}/>
-* */
-const BreadСrumbs = ({location}) => {
-    const pathName = location.pathname
-    const arrayPathName = pathName.split("/").filter(x => x);
+import Container from "../Container";
+import StyledNavLink from "../StyledNavLink";
+import SvgIcon from "../SvgIcon/SvgIcon";
+
+const BreadСrumbs = ({ location }) => {
+    const pathName = location.pathname;
+    const arrayPathName = pathName.split("/").filter((x) => x);
     const breadcrumbsArray = arrayPathName.map((name, index) => {
-        const slash = index !== 0 ? '/' : ''
-        const text = slash + name
-        const path = '/' + arrayPathName.slice(0, index + 1).join('/')
-        return [text, path]
-    })
-    console.log('breadcrumbsArray', breadcrumbsArray)
+        const slash = index !== 0 ? "/" : "";
+        const text = slash + name;
+        const path = "/" + arrayPathName.slice(0, index + 1).join("/");
+        return { text, path };
+    });
+
     return (
-        <>
-            {breadcrumbsArray.map(item => (
-                <NavLink to={`${item[1]}`} className={'breadcrumbs'} end>
-                    {`${item[0]}`}
-                </NavLink>
-            ))}
-        </>
+        <div className="breadcrumbs">
+            <Container>
+                <div className="breadcrumbs__container">
+                    <StyledNavLink to={"/"} className={"breadcrumbs__item"} end>
+                        <SvgIcon name="home" width="20" height="19" />
+                        Home /
+                    </StyledNavLink>
+                    {breadcrumbsArray.map((item) => (
+                        <StyledNavLink
+                            key={item.path}
+                            to={item.path}
+                            className={"breadcrumbs__item"}
+                            end
+                        >
+                            {item.text}
+                        </StyledNavLink>
+                    ))}
+                </div>
+            </Container>
+        </div>
     );
 };
 
 BreadСrumbs.propTypes = {
-    location: PropTypes.object.isRequired,
-}
+    location: PropTypes.object.isRequired
+};
 
 export default BreadСrumbs;
