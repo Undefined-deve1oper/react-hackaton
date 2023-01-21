@@ -1,0 +1,31 @@
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    z-index: 10;
+
+    @media (any-hover: hover) {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    & img {
+        width: 25px;
+        @media (max-width: $xs) {
+            width: 20px;
+        }
+    }
+    &__info {
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 20px;
+        & span {
+            color: $infoColor;
+        }
+        @media (max-width: $xs) {
+            font-size: 14px;
+        }
+    }
+}
