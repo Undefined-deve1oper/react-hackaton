@@ -1,5 +1,5 @@
-.header {
-    &__menu {
+.mobile-menu {
+    &__container {
         position: fixed;
         top: 0;
         left: 0;
@@ -11,7 +11,7 @@
         transition: transform 0.5s;
         z-index: 5;
     }
-    &__list {
+    &__content {
         width: 50%;
         height: 50%;
 

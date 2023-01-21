@@ -26,9 +26,23 @@ body {
 }
 
 ._container {
-    max-width: $maxWidthContainer + px;
+    min-width: $minWidthContainer;
+    max-width: 100%;
+    padding: $paddingContainer;
     margin: 0 auto;
-    padding: 0 15px;
+
+    @media (min-width: $xs) {
+        max-width: 540px;
+    }
+    @media (min-width: $md) {
+        max-width: 720px;
+    }
+    @media (min-width: $lg) {
+        max-width: 960px;
+    }
+    @media (min-width: $xl) {
+        max-width: $maxWidthContainer;
+    }
 }
 
 .page {

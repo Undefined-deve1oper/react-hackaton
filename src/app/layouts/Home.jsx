@@ -1,14 +1,17 @@
 import React from "react";
-import Container from "../components/common/Container/Container";
+import Footer from "../components/common/Footer/Footer";
+import Header from "../components/common/Header/Header";
+import Main from "../components/common/Main";
 import HomePage from "../components/pages/HomePage";
 
 const Home = () => {
     return (
         <>
-            <Container>
-                {/* <BreadCrumbs /> */}
+            <Header />
+            <Main>
                 <HomePage />
-            </Container>
+            </Main>
+            <Footer />
         </>
     );
 };
