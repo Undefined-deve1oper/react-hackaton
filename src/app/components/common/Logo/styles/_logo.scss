@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+    z-index: 10;
 
     @media (any-hover: hover) {
         &:hover {
@@ -19,9 +20,12 @@
     &__info {
         color: #ffffff;
         font-weight: 700;
-        @include adaptiv-value("font-size", 20, 14, 1);
+        font-size: 20px;
         & span {
             color: $infoColor;
+        }
+        @media (max-width: $xs) {
+            font-size: 14px;
         }
     }
 }
