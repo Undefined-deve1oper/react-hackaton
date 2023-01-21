@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import Container from "../Container/Container";
 import Logo from "../Logo";
-import StyledNavLink from "../StyledNavLink";
-import Button from "../Button/Button";
-import PhoneMenu from "../../ui/MobileMenu/MobileMenu";
-import { useNavigate } from "react-router-dom";
 import NavBar from "../NavBar";
-import MobileMenu from "../../ui/MobileMenu/MobileMenu";
+import MobileMenu from "../../ui/MobileMenu";
+import NavProfile from "../../ui/NavProfile";
+import Button from "../../common/Button";
+import { useNavigate } from "react-router-dom";
 
 const navLinks = [
     { path: "/", name: "Our team", id: 1, linkClass: "menu__link" },
@@ -20,6 +19,7 @@ const navLinks = [
 const Header = () => {
     const [isOpen, setOpen] = useState(false);
     const navigation = useNavigate();
+    const isLoggedIn = true;
 
     const handleToggleMenu = () => {
         setOpen((prevState) => !prevState);
@@ -35,9 +35,13 @@ const Header = () => {
                     <Logo />
                     <NavBar links={navLinks} className={"header__menu menu"} />
                     <div className={"header__actions actions-header"}>
-                        <div className={"actions-header__button"}>
-                            <Button onClick={goLogin}>Вход</Button>
-                        </div>
+                        {isLoggedIn ? (
+                            <NavProfile />
+                        ) : (
+                            <div className={"actions-header__button"}>
+                                <Button onClick={goLogin}>Вход</Button>
+                            </div>
+                        )}
                         <button
                             type="button"
                             className={`icon-menu`}
