@@ -6,12 +6,14 @@ import MobileMenu from "../../ui/MobileMenu";
 import NavProfile from "../../ui/NavProfile";
 import Button from "../../common/Button";
 import { useNavigate } from "react-router-dom";
+import Burger from "../Burger";
+import logoutIcon from "../../../assets/svg/logout.svg";
 
 const navLinks = [
-    { path: "/", name: "Our team", id: 1, linkClass: "menu__link" },
+    { path: "/", name: "Наша команда", id: 1, linkClass: "menu__link" },
     {
         path: "/favorites",
-        name: "Favourites",
+        name: "Избранное",
         id: 2
     }
 ];
@@ -19,7 +21,7 @@ const navLinks = [
 const Header = () => {
     const [isOpen, setOpen] = useState(false);
     const navigation = useNavigate();
-    const isLoggedIn = true;
+    const isLoggedIn = false;
 
     const handleToggleMenu = () => {
         setOpen((prevState) => !prevState);
@@ -35,20 +37,17 @@ const Header = () => {
                     <Logo />
                     <NavBar links={navLinks} className={"header__menu menu"} />
                     <div className={"header__actions actions-header"}>
-                        {isLoggedIn ? (
-                            <NavProfile />
-                        ) : (
-                            <div className={"actions-header__button"}>
-                                <Button onClick={goLogin}>Вход</Button>
-                            </div>
-                        )}
-                        <button
-                            type="button"
-                            className={`icon-menu`}
-                            onClick={handleToggleMenu}
-                        >
-                            <span className={isOpen ? " _active" : ""}></span>
-                        </button>
+                        {isLoggedIn && <NavProfile />}
+                        <div className={"actions-header__button"}>
+                            <Button onClick={goLogin}>
+                                {!isLoggedIn ? (
+                                    "Вход"
+                                ) : (
+                                    <img src={logoutIcon} alt="logout" />
+                                )}
+                            </Button>
+                        </div>
+                        <Burger open={isOpen} onToggle={handleToggleMenu} />
                     </div>
                 </div>
 
