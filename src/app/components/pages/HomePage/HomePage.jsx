@@ -6,12 +6,10 @@ import clientsBlock from "../../../config/clientsBlock.json";
 
 const HomePage = () => {
     return (
-        <>
-            <Container>
-                <Advantages {...principlesBlock} />
-                <Advantages {...clientsBlock} />
-            </Container>
-        </>
+        <Container>
+            <Advantages {...principlesBlock} />
+            <Advantages {...clientsBlock} />
+        </Container>
     );
 };
 

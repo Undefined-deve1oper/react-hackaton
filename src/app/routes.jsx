@@ -1,9 +1,13 @@
+import React from "react";
 import { Navigate } from "react-router-dom";
-import DeveloperPage from "./components/pages/DeveloperPage/DeveloperPage";
-import Developers from "./layouts/Developers";
-import Favorites from "./layouts/Favourites";
-import Home from "./layouts/Home";
-import Login from "./layouts/Login";
+
+const Login = React.lazy(() => import("./layouts/Login"));
+const Home = React.lazy(() => import("./layouts/Home"));
+const Favorites = React.lazy(() => import("./layouts/Favourites"));
+const Developers = React.lazy(() => import("./layouts/Developers"));
+const DeveloperPage = React.lazy(() =>
+    import("./components/pages/DeveloperPage")
+);
 
 const routes = () => {
     // const {isLogged} = useSelector(getAuth())
