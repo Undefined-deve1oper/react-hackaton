@@ -10,27 +10,26 @@
         transform: translatex(101%);
         transition: transform 0.5s;
         z-index: 5;
+        &._active {
+            transform: translateX(0);
+        }
     }
     &__content {
         width: 50%;
         height: 50%;
 
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-    }
-    &__menu_active {
-        transform: translateX(0);
-    }
-    &__item {
-        &:not(:last-child) {
-            margin: 0px 0px 25px 0px;
+
+        & ul li {
+            &:not(:last-child) {
+                margin: 0px 0px 25px 0px;
+            }
+            & a {
+                color: #fff;
+            }
         }
     }
     &__link {

@@ -7,6 +7,7 @@ import PhoneMenu from "../../ui/MobileMenu/MobileMenu";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../NavBar";
 import MobileMenu from "../../ui/MobileMenu/MobileMenu";
+import NavProfile from "../NavProfile/NavProfile";
 
 const navLinks = [
     { path: "/", name: "Our team", id: 1, linkClass: "menu__link" },
@@ -34,18 +35,7 @@ const Header = () => {
                 <div className="header__container">
                     <Logo />
                     <NavBar links={navLinks} className={"header__menu menu"} />
-                    <div className={"header__actions actions-header"}>
-                        <div className={"actions-header__button"}>
-                            <Button onClick={goLogin}>Вход</Button>
-                        </div>
-                        <button
-                            type="button"
-                            className={`icon-menu`}
-                            onClick={handleToggleMenu}
-                        >
-                            <span className={isOpen ? " _active" : ""}></span>
-                        </button>
-                    </div>
+                    <NavProfile />
                 </div>
 
                 <MobileMenu links={navLinks} open={isOpen} />
