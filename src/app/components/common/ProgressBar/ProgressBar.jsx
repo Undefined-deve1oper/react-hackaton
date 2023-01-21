@@ -1,10 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ProgressBar = ({ percentages, title, type }) => {
+const ProgressBar = ({ percentages, color, title }) => {
     return (
         <div className="progress-bar">
-            {type === "circle" ? (
+            <div
+                style={{ width: percentages + "%" }}
+                className="progress-bar__item"
+            >
+                <div className="progress-bar__label">
+                    {title} - {`${percentages}%`}
+                </div>
+            </div>
+            {/* {type === "circle" ? (
                 <div className="progress-bar_circle">
                     <svg
                         strokeDashoffset={percentages}
@@ -13,8 +21,8 @@ const ProgressBar = ({ percentages, title, type }) => {
                         <circle className="svg__track" />
                         <circle className="svg__indicator" />
                     </svg>
-                    <div classNameName="progress-bar__label">
-                        <span classNameName="progress-bar__label-text">
+                    <div className="progress-bar__label">
+                        <span className="progress-bar__label-text">
                             {percentages}%
                         </span>
                     </div>
@@ -36,7 +44,7 @@ const ProgressBar = ({ percentages, title, type }) => {
                         <h2 className="progress-bar__title-text">{title}</h2>
                     </div>
                 </div>
-            )}
+            )} */}
         </div>
     );
 };

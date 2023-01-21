@@ -1,76 +1,28 @@
 .progress-bar {
-    margin: 0 auto;
-    position: relative;
-    width: 180px;
-}
-
-.progress-bar_circle {
-    position: relative;
-}
-
-.progress-bar__svg {
-    width: 100px;
-    height: 100px;
-    transform: rotate(-90deg); /* Fix the orientation */
-}
-
-.svg__track {
-    stroke: #ddd;
-}
-
-.svg__indicator {
-    stroke: #07c;
-    stroke-dasharray: 251.2px; /* DashArray = Track's or indicator's Circumference */
-    stroke-linecap: round;
-}
-
-.svg__track,
-.svg__indicator {
-    cx: 50px;
-    cy: 50px;
-    r: 40px;
-    fill: transparent;
-    stroke-width: 10px;
-}
-
-.progress-bar__label {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-progress[value] {
-	appearance: none;
-	border: none;
-}
-
-.progress-bar_linear {
-    position: relative;
-}
-.progress-bar__linear-text {
-position: absolute;
-color: #fff;
-top: 6%;
-left: 40%
-}
-
-
-.html5 {
-    height: 20px;
     width: 100%;
-    margin-bottom: 10px;
-}
+    height: auto;
+    background: $mainColor;
+    border-radius: 5px;
+    &:not(:last-child) {
+        margin: 0px 0px 30px 0px;
+    }
+    user-select: none;
 
-.html5::-webkit-progress-value {
-    background-color:  #07c;
+    // .progress-bar__item
+    &__item {
+        height: 100%;
+        background: $infoColor;
+        border-radius: inherit;
+        padding: 10px 20px;
+        transition: width 1s ease-in-out;
+    }
 
-}
-.html5::-webkit-progress-bar {
-    background-color: #ddd;
-  }
-.progress-bar__title-text {
-    text-align: center;
+    // .progress-bar__label
+    &__label {
+        padding: 5px;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
 }
