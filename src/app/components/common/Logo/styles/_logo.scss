@@ -1,0 +1,27 @@
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    @media (any-hover: hover) {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    & img {
+        width: 25px;
+        @media (max-width: $md4+px) {
+            width: 20px;
+        }
+    }
+    &__info {
+        color: #ffffff;
+        font-weight: 700;
+        @include adaptiv-value("font-size", 20, 14, 1);
+        & span {
+            color: $infoColor;
+        }
+    }
+}

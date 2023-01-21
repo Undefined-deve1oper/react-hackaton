@@ -1,5 +1,5 @@
-$fontFamily: "Inter";
-$fontSize: 14;
+$fontFamily: "Montserrat";
+$fontSize: 16;
 
 $minWidth: 320px;
 $maxWidth: 1440;
@@ -8,3 +8,8 @@ $md1: $maxWidthContainer + 12;
 $md2: 991.98;
 $md3: 767.98;
 $md4: 479.98;
+
+$mainColor: #242424;
+$infoColor: #7749bd;
+$hoverInfoColor: #5a3295;
+$borderRadius: 12px;

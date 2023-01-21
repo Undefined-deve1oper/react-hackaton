@@ -1,7 +1,7 @@
 import { Navigate } from "react-router-dom";
 import DeveloperPage from "../components/pages/DeveloperPage/DeveloperPage";
-import HomePage from "../components/pages/HomePage";
 import Favorites from "../layouts/Favourites";
+import Home from "../layouts/Home";
 
 const routes = () => {
     // const {isLogged} = useSelector(getAuth())
@@ -9,7 +9,7 @@ const routes = () => {
     const isLogged = true;
 
     const main = [
-        { path: "", element: <HomePage /> },
+        { path: "", element: <Home /> },
         { path: "*", element: <Navigate to={"/"} /> },
         {
             path: "developers",

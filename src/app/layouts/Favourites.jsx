@@ -1,7 +1,15 @@
 import React from "react";
+import Container from "../components/common/Container/Container";
 
 function Favorites() {
-    return <div>Favorites</div>;
+    return (
+        <>
+            <Container>
+                {/* <BreadCrumbs /> */}
+                {/* Content */}
+            </Container>
+        </>
+    );
 }
 
 export default Favorites;
