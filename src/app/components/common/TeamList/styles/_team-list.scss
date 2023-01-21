@@ -1,0 +1,37 @@
+.team-list {
+
+	display: flex;
+	margin-bottom: 50px;
+
+	&.flat {
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-top: 100px;
+		gap: 115px 30px;
+	}
+
+	&.list {
+		flex-direction: column;
+		gap: 30px 0;
+	}
+
+	&.flat &_item {
+		width: 30%;
+		flex: 0 0 30%;
+
+		@media (max-width: $lg) {
+			width: 47%;
+			flex: 0 0 47%;
+		}
+
+		@media (max-width: $xs) {
+			width: 100%;
+			flex: 0 0 100%;
+		}
+	}
+
+	&.list &_item {
+		width: 100%;
+		flex: 0 0 100%;
+	}
+}

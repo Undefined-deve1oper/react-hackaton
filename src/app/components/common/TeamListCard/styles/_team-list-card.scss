@@ -1,0 +1,112 @@
+.team-list-card {
+	height: 100%;
+	position: relative;
+	color: $mainColor;
+	background-color: #e3e3e3;
+	border-radius: 10px;
+
+	&_container {
+		padding: 20px;
+		display: flex;
+
+		@media (max-width: $xs) {
+			padding: 20px 20px 0;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+	}
+
+	&.flat &_container {
+		padding: 0 20px;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	&.list &_image-block {
+		width: 20%;
+		flex: 0 0 20%;
+		margin-right: 30px;
+	}
+
+	&_image {
+		width: 100%;
+		height: auto;
+		position: relative;
+
+		@media (max-width: $xs) {
+			margin-bottom: 15px;
+		}
+
+		& img {
+			max-width: 100%;
+			height: auto;
+			border-radius: 50%;
+
+		}
+	}
+
+	&.flat &_image {
+		margin: -60px auto 15px;
+	}
+
+	&_favourite {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		background-color: #f1f1f1;
+		border-radius: 50%;
+		right: 30px;
+		bottom: 30px;
+		cursor: pointer;
+
+		svg {
+			width: 30px;
+			height: 30px;
+			fill: none;
+			stroke: #464455;
+		}
+
+		svg.favourite-active {
+			fill: #dc2f2f;
+			stroke: #dc2f2f;
+		}
+	}
+
+	&.list &_favourite {
+		right: 15px;
+		bottom: 15px;
+	}
+
+	&_name {
+		font-size: 1.3rem;
+		line-height: 1.2;
+		color: $mainColor;
+		margin: 0;
+		margin-bottom: 5px;
+
+		a {
+			color: $mainColor;
+		}
+	}
+
+	&_proffession {
+		font-weight: 600;
+		font-size: 1rem;
+		line-height: 1.2;
+		color: #646464;
+		margin-bottom: 15px;
+
+		span {
+			color: #dc2f2f;
+		}
+	}
+
+	&_desc {
+		font-size: 0.9rem;
+		line-height: 1.2;
+		color: $mainColor;
+		margin-bottom: 20px;
+	}
+}
