@@ -1,23 +1,28 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Button = ({ children, ...rest }) => {
+const Button = ({children, styleType = 'animate', color = 'DarkMagenta', rounding = true, ...rest}) => {
+    // styleType there are: 'animate', 'default', 'none'
     return (
-        <button className={"button"} {...rest}>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+        <button
+            className={styleType + (rounding ? ' rounding ' : "")}
+            style={{backgroundColor: color}}
+            {...rest}
+        >
             {children}
         </button>
     );
 };
 
+
 Button.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.node,
         PropTypes.arrayOf(PropTypes.node)
-    ]).isRequired
+    ]).isRequired,
+    styleType: PropTypes.string,
+    color: PropTypes.string,
+    rounding: PropTypes.bool,
 };
 
 export default Button;
