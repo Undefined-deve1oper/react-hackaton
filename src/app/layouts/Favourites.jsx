@@ -1,19 +1,24 @@
 import React from "react";
-import Footer from "../components/common/Footer/Footer";
-import Header from "../components/common/Header/Header";
+import { useLocation } from "react-router";
+import BreadСrumbs from "../components/common/BreadСrumbs";
+import Footer from "../components/common/Footer";
+import Header from "../components/common/Header";
 import Main from "../components/common/Main";
-import ProgressBar from "../components/common/ProgressBar/ProgressBar";
+import ProgressBar from "../components/common/ProgressBar";
 
-function Favorites() {
+const Favorites = () => {
+    const location = useLocation();
+
     return (
         <>
             <Header />
             <Main>
-                <ProgressBar />
+                <BreadСrumbs location={location} />
+                <ProgressBar percentages={80} />
             </Main>
             <Footer />
         </>
     );
-}
+};
 
 export default Favorites;

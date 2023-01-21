@@ -60,4 +60,17 @@
             font-size: 14px;
         }
     }
+
+    // .actions-header__logout
+    &__logout {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (any-hover: hover) {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
 }

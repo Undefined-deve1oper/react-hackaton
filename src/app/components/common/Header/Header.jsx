@@ -7,7 +7,7 @@ import NavProfile from "../../ui/NavProfile";
 import Button from "../../common/Button";
 import { useNavigate } from "react-router-dom";
 import Burger from "../Burger";
-import logoutIcon from "../../../assets/svg/logout.svg";
+import SvgIcon from "../SvgIcon/SvgIcon";
 
 const navLinks = [
     { path: "/", name: "Наша команда", id: 1, linkClass: "menu__link" },
@@ -21,13 +21,16 @@ const navLinks = [
 const Header = () => {
     const [isOpen, setOpen] = useState(false);
     const navigation = useNavigate();
-    const isLoggedIn = false;
+    const isLoggedIn = true;
 
     const handleToggleMenu = () => {
         setOpen((prevState) => !prevState);
     };
     const goLogin = () => {
         navigation("/login/signin");
+    };
+    const logOut = () => {
+        console.log("dfsfsd");
     };
 
     return (
@@ -39,13 +42,20 @@ const Header = () => {
                     <div className={"header__actions actions-header"}>
                         {isLoggedIn && <NavProfile />}
                         <div className={"actions-header__button"}>
-                            <Button onClick={goLogin}>
-                                {!isLoggedIn ? (
-                                    "Вход"
-                                ) : (
-                                    <img src={logoutIcon} alt="logout" />
-                                )}
-                            </Button>
+                            {!isLoggedIn ? (
+                                <Button onClick={goLogin}>Вход</Button>
+                            ) : (
+                                <button
+                                    className="actions-header__logout"
+                                    onClick={logOut}
+                                >
+                                    <SvgIcon
+                                        name="logout"
+                                        width="30"
+                                        height="36"
+                                    />
+                                </button>
+                            )}
                         </div>
                         <Burger open={isOpen} onToggle={handleToggleMenu} />
                     </div>

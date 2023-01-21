@@ -1,18 +1,22 @@
 import React from "react";
-import "./_progressBar.scss";
+import PropTypes from "prop-types";
 
-const ProgressBar = (props) => {
+const ProgressBar = ({ percentages }) => {
     return (
-        <div class="svg-pi-group">
-            <svg strokeDashoffset="184" class="svg-pi svg-pi-25">
-                <circle class="svg-pi-track" />
-                <circle class="svg-pi-indicator" />
+        <div className="svg-pi-group">
+            <svg strokeDashoffset={percentages} className="svg-pi svg-pi-25">
+                <circle className="svg-pi-track" />
+                <circle className="svg-pi-indicator" />
             </svg>
-            {/* <div className="svg-pi-label">
-                <span className="svg-pi-label__loading">123</span>
+            {/* <div classNameName="svg-pi-label">
+                <span classNameName="svg-pi-label__loading">123</span>
             </div> */}
         </div>
     );
+};
+
+ProgressBar.propTypes = {
+    percentages: PropTypes.number.isRequired
 };
 
 export default ProgressBar;
