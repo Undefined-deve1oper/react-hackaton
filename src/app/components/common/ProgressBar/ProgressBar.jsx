@@ -5,15 +5,33 @@ const ProgressBar = ({ percentages, color, title, type = "circle" }) => {
     return (
         <>
             {type === "circle" ? (
-                <div class="circle-wrap">
-                    <div class="circle">
-                        <div class="mask full">
-                            <div class="fill"></div>
+                <div className="circle-progress">
+                    <div className="circle">
+                        <div
+                            style={{
+                                "--i": `${percentages}`
+                            }}
+                            className="mask full"
+                        >
+                            <div
+                                style={{
+                                    "--i": `${percentages}`
+                                }}
+                                className="fill"
+                            ></div>
                         </div>
-                        <div class="mask half">
-                            <div class="fill"></div>
+                        <div className="mask half">
+                            <div
+                                style={{
+                                    "--i": `${percentages}`
+                                }}
+                                className="fill"
+                            ></div>
                         </div>
-                        <div class="inside-circle"> {`${percentages}%`} </div>
+                        <div className="inside-circle">{`${percentages}%`}</div>
+                        <div className="circle-progress__label">
+                            {title} - {`${percentages}%`}
+                        </div>
                     </div>
                 </div>
             ) : (
@@ -31,6 +49,8 @@ const ProgressBar = ({ percentages, color, title, type = "circle" }) => {
         </>
     );
 };
+
+
 
 ProgressBar.propTypes = {
     percentages: PropTypes.number.isRequired,
