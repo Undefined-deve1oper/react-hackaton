@@ -1,0 +1,54 @@
+
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+  
+    min-height: 100vh;
+  
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  
+  .svg-pi {
+    width: 100px;
+    height: 100px;
+    transform: rotate(-90deg); /* Fix the orientation */
+  }
+  
+  .svg-pi-track {
+    stroke: #ddd;
+  }
+  
+  .svg-pi-indicator {
+    stroke: #07c;
+    stroke-dasharray: 251.2px; /* DashArray = Track's or indicator's Circumference */
+    stroke-linecap: round;
+  }
+  
+  .svg-pi-track,
+  .svg-pi-indicator {
+    cx: 50px;
+    cy: 50px;
+    r: 40px;
+    fill: transparent;
+    stroke-width: 10px;
+  }
+
+  .svg-pi-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .svg-pi-label__loading {
+    opacity: .5;
+    font-size: 0.75em;
+  }
+  .svg-pi-label__loading {
+  display: block;
+}
+    
