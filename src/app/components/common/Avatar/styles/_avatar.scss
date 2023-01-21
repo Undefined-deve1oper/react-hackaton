@@ -1,0 +1,10 @@
+.card-img {
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    @media (any-hover: hover) {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

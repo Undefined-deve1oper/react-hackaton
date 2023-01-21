@@ -1,5 +1,6 @@
 .header__menu {
     flex: 1 1 auto;
+    z-index: 10;
     @media (max-width: $md) {
         display: none;
     }
