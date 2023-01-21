@@ -14,7 +14,11 @@ const Favorites = () => {
             <Header />
             <Main>
                 <BreadСrumbs location={location} />
-                <ProgressBar percentages={80} />
+                <ProgressBar
+                    percentages={80}
+                    title={"javaScript"}
+                    type="circle"
+                />
             </Main>
             <Footer />
         </>
