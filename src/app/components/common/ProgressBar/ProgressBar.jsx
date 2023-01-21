@@ -17,7 +17,7 @@ const ProgressBar = ({ percentages, color, title, type = "circle" }) => {
                                 style={{
                                     "--i": `${percentages}`
                                 }}
-                                className="fill"
+                                className={"fill " + color}
                             ></div>
                         </div>
                         <div className="mask half">
@@ -25,7 +25,7 @@ const ProgressBar = ({ percentages, color, title, type = "circle" }) => {
                                 style={{
                                     "--i": `${percentages}`
                                 }}
-                                className="fill"
+                                className={"fill " + color}
                             ></div>
                         </div>
                         <div className="inside-circle">{`${percentages}%`}</div>
@@ -49,8 +49,6 @@ const ProgressBar = ({ percentages, color, title, type = "circle" }) => {
         </>
     );
 };
-
-
 
 ProgressBar.propTypes = {
     percentages: PropTypes.number.isRequired,

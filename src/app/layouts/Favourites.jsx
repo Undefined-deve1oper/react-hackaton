@@ -8,9 +8,9 @@ import Main from "../components/common/Main";
 import ProgressBar from "../components/common/ProgressBar";
 
 const testData = [
-    { bgcolor: "#6a1b9a", completed: 25, title: "JS" },
-    { bgcolor: "#00695c", completed: 50, title: "React" },
-    { bgcolor: "#ef6c00", completed: 100, title: "Scss" }
+    { bgcolor: "redux", completed: 25, title: "JS" },
+    { bgcolor: "red", completed: 50, title: "React" },
+    { bgcolor: "orange", completed: 100, title: "Scss" }
 ];
 
 const Favorites = () => {

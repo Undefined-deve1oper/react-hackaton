@@ -35,7 +35,6 @@
     border-radius: 50%;
     border: 1px solid #cdcbd0;
     position: relative;
-    
 }
 
 .circle-progress .circle .mask,
@@ -71,7 +70,22 @@
 /* 3rd progress bar */
 .mask .fill {
     clip: rect(0px, 75px, 150px, 0px);
-    background-color: $infoColor;
+    background: $infoColor;
+    &.redux {
+        background: $infoColor;
+    }
+    &.red {
+        background: #ca1619;
+    }
+    &.blue {
+        background: #0088ca;
+    }
+    &.orange {
+        background: #ffa500;
+    }
+    &.green {
+        background: #00ff00;
+    }
 }
 
 .mask.full,
@@ -83,10 +97,10 @@
 // .circle-progress {}
 .circle-progress__label {
     position: absolute;
-   left: 30%;
-   top: 110%;
-   text-transform: uppercase;
-   font-weight: 400;
+    left: 30%;
+    top: 110%;
+    text-transform: uppercase;
+    font-weight: 400;
 }
 
 @keyframes fill {
@@ -97,4 +111,3 @@
         transform: rotate(calc(1.8deg * var(--i)));
     }
 }
-
