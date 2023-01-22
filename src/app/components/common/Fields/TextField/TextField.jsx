@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { useCallback } from "react";
 import SvgIcon from "../../SvgIcon";
 
 const TextField = ({
@@ -11,13 +10,11 @@ const TextField = ({
     onChange,
     error,
     placeholder,
+    id,
     ...rest
 }) => {
     const [showPassword, setShowPassword] = useState(false);
 
-    const handleChange = useCallback(({ target }) => {
-        onChange({ name: [target.name], value: target.value });
-    }, []);
     const getHiddenButtonClasses = () => {
         if (!showPassword) {
             return "text-field__hiddenButton";
@@ -32,30 +29,34 @@ const TextField = ({
     return (
         <div className="text-field">
             {label && <label htmlFor={name}>{label}</label>}
-            <input
-                type={showPassword ? "text" : type}
-                id={name}
-                name={name}
-                value={value}
-                onChange={handleChange}
-                placeholder={placeholder}
-                className={"text-field__input-base"}
-                {...rest}
-            />
-            {type === "password" && (
-                <button
-                    className={getHiddenButtonClasses()}
-                    type="button"
-                    onClick={toggleShowPassword}
-                >
-                    <SvgIcon
-                        svgClass="text-field__password"
-                        name="password"
-                        width="20"
-                        height="20"
-                    />
-                </button>
-            )}
+            <div className="text-field__body">
+                <input
+                    type={showPassword ? "text" : type}
+                    id={id}
+                    name={name}
+                    value={value}
+                    onChange={onChange}
+                    placeholder={placeholder}
+                    className={`text-field__input-base ${
+                        error ? "is-invalid" : ""
+                    }`}
+                    {...rest}
+                />
+                {type === "password" && (
+                    <button
+                        className={getHiddenButtonClasses()}
+                        type="button"
+                        onClick={toggleShowPassword}
+                    >
+                        <SvgIcon
+                            svgClass="text-field__password"
+                            name="password"
+                            width="20"
+                            height="20"
+                        />
+                    </button>
+                )}
+            </div>
             {error && <div className="text-field__error">{error}</div>}
         </div>
     );
@@ -66,6 +67,7 @@ TextField.defaultProps = {
 };
 
 TextField.propTypes = {
+    id: PropTypes.string,
     label: PropTypes.string,
     name: PropTypes.string,
     value: PropTypes.string,
@@ -75,4 +77,4 @@ TextField.propTypes = {
     placeholder: PropTypes.string
 };
 
-export default TextField;
+export default React.memo(TextField);

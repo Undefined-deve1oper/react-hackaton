@@ -4,19 +4,19 @@ export const validator = (data, config) => {
         let statusValidate;
         switch (validateMethod) {
             case "isRequired":
-                if (typeof data === "boolean") statusValidate = !data;
-                else statusValidate = data.trim() === "";
+                if (typeof value === "boolean") statusValidate = !value;
+                else statusValidate = value.trim() === "";
                 break;
             case "isEmail":
                 const emailRegExp = /^\S+@\S+\.\S+$/g;
-                statusValidate = !emailRegExp.test(data);
+                statusValidate = !emailRegExp.test(value);
                 break;
             case "isContainCapitalSymbol":
                 const capitalRegExp = /[A-Z]/g.test(value);
-                statusValidate = !capitalRegExp.test(data);
+                statusValidate = !capitalRegExp.test(value);
                 break;
             case "min":
-                statusValidate = data.length < config.value;
+                statusValidate = value.length < config.value;
                 break;
             default:
                 break;
