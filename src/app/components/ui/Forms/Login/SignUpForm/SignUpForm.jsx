@@ -54,7 +54,7 @@ const SignUpForm = () => {
                 placeholder="Введите пароль..."
                 autoComplete="off"
             />
-            <Button>Создать аккаунт</Button>
+            <Button styleType={"animate"}>Создать аккаунт</Button>
         </FormComponent>
     );
 };

@@ -1,4 +1,30 @@
 // Circle
+.progress-cricle {
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+    color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background: #07070c;
+    text-align: center;
+
+    & .title {
+        position: relative;
+        z-index: 100;
+    }
+
+    &.overlay {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background-color: #07070c;
+    }
+}
 
 .progress-circle {
     -webkit-mask-image: -webkit-radial-gradient(circle, white, black);

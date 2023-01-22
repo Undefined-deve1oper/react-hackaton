@@ -47,7 +47,7 @@ const SignInForm = () => {
                 placeholder="Введите пароль..."
                 autoComplete="off"
             />
-            <Button>Войти</Button>
+            <Button styleType={"animate"}>Войти</Button>
         </FormComponent>
     );
 };
