@@ -1,13 +1,39 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import TeamListCard from "../TeamListCard/TeamListCard";
+import Button from '../Button';
 
-const TeamList = ({ list, type = 'flat' }) => {
+const TeamList = ({ list, type = 'list', showSwitchPanel = false }) => {
 	const [currentType, setCurrentType] = useState(type);
 
+	const switchPanel = [
+		{
+			title: 'Плиткой',
+			value: 'flat'
+		},
+		{
+			title: 'Списком',
+			value: 'list'
+		}
+	];
+
+	const handleSwitch = (value) => {
+		setCurrentType(value);
+	}
+
 	return (
-		<>
-			<button onClick={() => setCurrentType(prev => prev === 'flat' ? 'list' : 'flat')}>Поменять вид</button>
+		<div className="team-list-block">
+
+			{showSwitchPanel ?
+				<div className="team-list-block_switch-panel">
+					{
+						switchPanel.map(element => (
+							<Button key={element.value} onClick={() => handleSwitch(element.value)}>{element.title}</Button>
+						))
+					}
+				</div>
+				: null
+			}
 
 			<div className={`team-list ${currentType}`}>
 				{list.map(person => (
@@ -17,13 +43,14 @@ const TeamList = ({ list, type = 'flat' }) => {
 				))}
 
 			</div>
-		</>
+		</div>
 	);
 }
 
 TeamList.propTypes = {
 	list: PropTypes.arrayOf(PropTypes.object).isRequired,
-	type: PropTypes.string
+	type: PropTypes.string,
+	showSwitchPanel: PropTypes.bool
 }
 
 export default TeamList;
