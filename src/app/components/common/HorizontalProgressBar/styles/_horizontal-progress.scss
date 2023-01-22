@@ -1,0 +1,27 @@
+// horizontal
+.progress {
+    border-radius: 2px;
+    position: relative;
+    margin: 15px;
+    height: 30px;
+    max-width: 100%;
+    align-self: stretch;
+    font-weight: 300;
+    background-color: $mainColor;
+
+    &__text {
+        align-self: stretch;
+        font-weight: 700;
+        margin: 15px;
+    }
+    &__done {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 0;
+        opacity: 0;
+        transition: 1s ease 0.3s;
+    }
+}

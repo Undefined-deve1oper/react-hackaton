@@ -5,12 +5,17 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import SliderButton from "../../common/SliderButton/SliderButton";
+import SvgIcon from "../../common/SvgIcon";
 
 const ProjectSlider = ({ items, className, ...rest }) => {
-    console.log(className);
     return (
         <Swiper
-            navigation={true}
+            navigation={{
+                nextEl: ".slider__item .next",
+                prevEl: ".slider__item .prev",
+                disabledClass: "slider__item .disabled"
+            }}
             modules={[Autoplay, Pagination, Navigation]}
             className="project-slider"
             mousewheel={true}
@@ -28,9 +33,23 @@ const ProjectSlider = ({ items, className, ...rest }) => {
                         style={{
                             backgroundImage: `url(${item})`
                         }}
-                    ></div>
+                    />
                 </SwiperSlide>
             ))}
+            <SliderButton
+                isNext={false}
+                styleType="none"
+                className={className + "__item prev"}
+            >
+                <SvgIcon name="arrow-left" width="20" height="20" />
+            </SliderButton>
+            <SliderButton
+                isNext={true}
+                styleType="none"
+                className={className + "__item next"}
+            >
+                <SvgIcon name="arrow-left" width="20" height="20" />
+            </SliderButton>
         </Swiper>
     );
 };

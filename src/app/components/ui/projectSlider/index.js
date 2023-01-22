@@ -1,2 +1,2 @@
-import ImageSlider from "./ImageSlider";
-export default ImageSlider;
+import ProjectSlider from "./ProjectSlider";
+export default ProjectSlider;
