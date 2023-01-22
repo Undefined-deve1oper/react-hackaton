@@ -17,7 +17,7 @@ Button.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.node,
         PropTypes.arrayOf(PropTypes.node)
-    ]).isRequired
+    ])
 };
 
 export default Button;

@@ -13,14 +13,9 @@ const FormComponent = ({
     const clonedElements = React.Children.map(children, (child) => {
         const item = child;
         const childType = typeof child;
+        let config = {};
 
-        let config = { name: "" };
-        if (
-            childType === "object" ||
-            (childType === "function" &&
-                item.props.type !== "submit" &&
-                item.props.type !== "button")
-        ) {
+        if (childType === "object") {
             config = {
                 ...item.props,
                 onChange: handleChange,

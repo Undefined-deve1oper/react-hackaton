@@ -31,28 +31,18 @@ const SignInForm = () => {
             handleChange={handleChange}
             handleKeyDown={handleKeyDown}
         >
-            <div className="form__item">
-                <TextField
-                    autoFocus
-                    id="email"
-                    name="email"
-                    placeholder="Введите email..."
-                    error={errors.email}
-                    value={data.email}
-                    onChange={handleChange}
-                />
-            </div>
-            <div className="form__item">
-                <TextField
-                    id="password"
-                    name="password"
-                    type="password"
-                    value={data.password}
-                    onChange={handleChange}
-                    placeholder="Введите пароль..."
-                    error={errors.password}
-                />
-            </div>
+            <TextField
+                autoFocus
+                id="email"
+                name="email"
+                placeholder="Введите email..."
+            />
+            <TextField
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Введите пароль..."
+            />
             <Button>Войти</Button>
         </FormComponent>
     );
