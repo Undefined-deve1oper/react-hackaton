@@ -13,7 +13,7 @@ const testData = [
     { bgcolor: "orange", completed: "100", text: "Scss" }
 ];
 const testSlider = [
-    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+    "https://avatars.mds.yandex.net/i?id=1d3a7f4b63e9fe0106cdbe8a12d741317f8a0901-7178390-images-thumbs&n=13",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvYao2vCSfNvO4DUjNr_XaFZ7wiNOBGX8zln5TiMq3bHUMnnkee3BAV-ZHxK4t9BaDZhw&usqp=CAU",
     "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
 ];
@@ -25,7 +25,7 @@ const Favorites = () => {
             <Main>
                 <BreadCrumbs />
                 <Container>
-                    <ProjectSlider items={testSlider} />
+                    <ProjectSlider className="slider" items={testSlider} />
                     {testData.map((item) => (
                         <ProgressBar
                             progress={item.completed}
