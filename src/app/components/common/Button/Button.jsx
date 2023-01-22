@@ -1,7 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Button = ({ children, styleType, color, rounding, ...rest }) => {
+const Button = ({
+    children,
+    styleType = "animate",
+    color = "DarkMagenta",
+    rounding = true,
+    ...rest
+}) => {
     // styleType there are: 'animate', 'default', 'none'
     return (
         <button

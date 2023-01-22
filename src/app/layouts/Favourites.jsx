@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router";
+import React from "react";
 import BreadСrumbs from "../components/common/BreadСrumbs";
 import Container from "../components/common/Container";
 import Footer from "../components/common/Footer";
@@ -14,20 +13,17 @@ const testData = [
 ];
 
 const Favorites = () => {
-    const location = useLocation();
-
     return (
         <>
             <Header />
             <Main>
-                <BreadСrumbs location={location} />
+                <BreadСrumbs />
                 <Container>
                     {testData.map((item) => (
                         <ProgressBar
                             percentages={item.completed}
                             color={item.bgcolor}
                             title={item.title}
-                            // type
                         />
                     ))}
                 </Container>

@@ -28,6 +28,17 @@
 		width: 20%;
 		flex: 0 0 20%;
 		margin-right: 30px;
+
+		@media(max-width: $md) {
+			width: 30%;
+			flex: 0 0 30%;
+		}
+
+		@media(max-width: $xs) {
+			width: 100%;
+			flex: 0 0 100%;
+			margin-right: 0;
+		}
 	}
 
 	&_image {
@@ -53,13 +64,32 @@
 
 	&_favourite {
 		position: absolute;
-		width: 30px;
-		height: 30px;
-		background-color: #f1f1f1;
+		width: 36px;
+		height: 36px;
+		background-color: #f1f1f1 !important;
+		padding: 0;
 		border-radius: 50%;
-		right: 30px;
-		bottom: 30px;
+		right: 25px;
+		bottom: 20px;
 		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@media(max-width: $xl) {
+			right: 10px;
+			bottom: 17px;
+		}
+
+		@media(max-width: $md) {
+			right: 20px;
+			bottom: 20px;
+		}
+
+		@media(max-width: $xs) {
+			right: 25px;
+			bottom: 25px;
+		}
 
 		svg {
 			width: 30px;
@@ -75,8 +105,23 @@
 	}
 
 	&.list &_favourite {
-		right: 15px;
-		bottom: 15px;
+		right: 8px;
+		bottom: 13px;
+
+		@media(max-width: $xl) {
+			right: -2px;
+			bottom: 11px;
+		}
+
+		@media(max-width: $md) {
+			right: 10px;
+			bottom: 10px;
+		}
+
+		@media(max-width: $xs) {
+			right: 25px;
+			bottom: 25px;
+		}
 	}
 
 	&_name {
@@ -100,6 +145,16 @@
 
 		span {
 			color: #dc2f2f;
+		}
+	}
+
+	&_qualities {
+		display: flex;
+		gap: 10px;
+		margin-bottom: 10px;
+
+		@media(max-width: $xs) {
+			display: none;
 		}
 	}
 
