@@ -14,6 +14,7 @@ import { getDeveloperById } from "../../../store/slices/developers";
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
 import { getQualitiesListByIds } from "../../../store/slices/qualities";
+import { Link } from "react-router-dom";
 
 const DeveloperPage = () => {
     const { developerId } = useParams();
@@ -30,8 +31,25 @@ const DeveloperPage = () => {
 
     return (
         <div className="developer-card">
+
+            <div className="developer-card_back">
+                <Link to="/developers">
+                    <Button styleType={'none'} className="back-button">&#8678; <span>Весь состав команды</span></Button>
+                </Link>
+            </div>
+
             <div className="developer-card_info">
                 <div className="developer-card_info_left">
+
+                    <div className="developer-card_info_name mobile-open">
+                        <h1>{developer.name}</h1>
+                    </div>
+
+                    <div className="developer-card_info_proffession  mobile-open">
+                        {age} {declOfNum(age, ["год", "года", "лет"])},{" "}
+                        <span>{developer.profession}</span>
+                    </div>
+
                     <div className="developer-card_info_image-block">
                         <img src={developer.photo} alt={developer.name} />
                         <Button
@@ -57,14 +75,27 @@ const DeveloperPage = () => {
                             ))}
                         </div>
                     ) : null}
+
+                    <div className="developer-card_info_socials">
+                        {developer.social?.telegram ?
+                            <div className="developer-card_info_telegram">
+                                <a target={"_blank"} href={`https://t.me/${developer.social.telegram}`} rel="noreferrer">
+                                    <SvgIcon name="telegram" />
+                                    @{developer.social.telegram}
+
+                                </a>
+                            </div>
+                            : null
+                        }
+                    </div>
                 </div>
 
                 <div className="developer-card_info_right">
-                    <div className="developer-card_info_name">
+                    <div className="developer-card_info_name mobile-close">
                         <h1>{developer.name}</h1>
                     </div>
 
-                    <div className="developer-card_info_proffession">
+                    <div className="developer-card_info_proffession mobile-close">
                         {age} {declOfNum(age, ["год", "года", "лет"])},{" "}
                         <span>{developer.profession}</span>
                     </div>
@@ -75,7 +106,7 @@ const DeveloperPage = () => {
 
                     {developer.skills?.length ? (
                         <div className="developer-card_info_skills">
-                            <h3>Навыки</h3>
+                            <h3><span>Навыки</span></h3>
                             <div
                                 className={`developer-card_info_skills-container ${currentType}`}
                             >
@@ -96,20 +127,23 @@ const DeveloperPage = () => {
                         </div>
                     ) : null}
 
-                    <div className="developer-card_info_worked">
-                        <h3>Работал над</h3>
-                        {developer.workedOn}
-                    </div>
                 </div>
             </div>
 
-            {developer.projects?.length ? (
-                <div className="developer-card_projects">
-                    <h2>Проекты</h2>
-                    <MainSlider items={developer.projects} />
-                </div>
-            ) : null}
-        </div>
+            <div className="developer-card_info_worked">
+                <h2><span>Роль в проекте</span></h2>
+                {developer.workedOn}
+            </div>
+
+            {
+                developer.projects?.length ? (
+                    <div className="developer-card_projects">
+                        <h2><span>Проекты</span></h2>
+                        <MainSlider items={developer.projects} />
+                    </div>
+                ) : null
+            }
+        </div >
     );
 };
 
