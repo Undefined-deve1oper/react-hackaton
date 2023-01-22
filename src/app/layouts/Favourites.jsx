@@ -7,9 +7,9 @@ import Main from "../components/common/Main";
 import ProgressBar from "../components/common/ProgressBar";
 
 const testData = [
-    { bgcolor: "redux", completed: 25, title: "JS" },
-    { bgcolor: "red", completed: 50, title: "React" },
-    { bgcolor: "orange", completed: 100, title: "Scss" }
+    { bgcolor: "red", completed: "25", text: "JS" },
+    { bgcolor: "blue", completed: "50", text: "React" },
+    { bgcolor: "orange", completed: "100", text: "Scss" }
 ];
 
 const Favorites = () => {
@@ -17,13 +17,13 @@ const Favorites = () => {
         <>
             <Header />
             <Main>
-                <BreadСrumbs />
                 <Container>
+                    <BreadСrumbs />
                     {testData.map((item) => (
                         <ProgressBar
-                            percentages={item.completed}
+                            progress={item.completed}
                             color={item.bgcolor}
-                            title={item.title}
+                            text={item.text}
                         />
                     ))}
                 </Container>

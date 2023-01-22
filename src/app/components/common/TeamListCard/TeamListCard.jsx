@@ -35,7 +35,8 @@ const TeamListCard = ({
                         </Link>
 
                         <Button
-                            styleType="none team-list-card_favourite"
+                            styleType="none"
+                            className="team-list-card_favourite"
                             onClick={handlerFav}
                         >
                             <SvgIcon

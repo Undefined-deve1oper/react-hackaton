@@ -22,29 +22,30 @@ const TeamList = ({ list, type = 'list', showSwitchPanel = false }) => {
 	}
 
 	return (
-		<div className="team-list-block">
+        <div className="team-list-block">
+            {showSwitchPanel ? (
+                <div className="team-list-block_switch-panel">
+                    {switchPanel.map((element) => (
+                        <Button
+                            styleType="default"
+                            key={element.value}
+                            onClick={() => handleSwitch(element.value)}
+                        >
+                            {element.title}
+                        </Button>
+                    ))}
+                </div>
+            ) : null}
 
-			{showSwitchPanel ?
-				<div className="team-list-block_switch-panel">
-					{
-						switchPanel.map(element => (
-							<Button key={element.value} onClick={() => handleSwitch(element.value)}>{element.title}</Button>
-						))
-					}
-				</div>
-				: null
-			}
-
-			<div className={`team-list ${currentType}`}>
-				{list.map(person => (
-					<div key={person.id} className="team-list_item">
-						<TeamListCard {...person} type={currentType} />
-					</div>
-				))}
-
-			</div>
-		</div>
-	);
+            <div className={`team-list ${currentType}`}>
+                {list.map((person) => (
+                    <div key={person.id} className="team-list_item">
+                        <TeamListCard {...person} type={currentType} />
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 }
 
 TeamList.propTypes = {

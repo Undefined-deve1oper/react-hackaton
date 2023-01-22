@@ -43,7 +43,9 @@ const Header = () => {
                         {isLoggedIn && <NavProfile />}
                         <div className={"actions-header__button"}>
                             {!isLoggedIn ? (
-                                <Button onClick={goLogin}>Вход</Button>
+                                <Button styleType="animate" onClick={goLogin}>
+                                    Вход
+                                </Button>
                             ) : (
                                 <button
                                     className="actions-header__logout"
