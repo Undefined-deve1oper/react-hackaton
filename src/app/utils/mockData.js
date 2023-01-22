@@ -47,10 +47,6 @@ const useMockData = () => {
                 await httpService.put("comments/" + comment.id, comment);
                 incrementCount();
             }
-            for (const favourite of favourites) {
-                await httpService.put("favourites/" + favourite.id, favourite);
-                incrementCount();
-            }
             for (const develop of developers) {
                 await httpService.put("developers/" + develop.id, develop);
                 incrementCount();

@@ -1,71 +1,97 @@
 [
     {
         "id": "2332423e32442u32427876b321323",
-        "age": 28,
+        "birthDate": "30.07.1994",
         "description": "Работал в электроэнергетике инженером и начальником смены электроцеха. Мне очень нравилась эта сфера, но решил перейти в программирование из-за большей свободы и возможностей.",
         "image": "",
         "projects": [],
-        "qualities": [],
+        "qualities": ["67rdca3eeb7f6fgeed471101", "67rdca3eeb7f6fgeed4711012"],
         "social": { "telegram": "https://t.me/Alex_Conglomerate" },
-        "javaScript": 80,
-        "react": 70,
-        "scss": 95,
-        "workedOn": ""
+        "skils": [
+            { "title": "JavaScript", "percentages": 80 },
+            { "title": "React", "percentages": 50 },
+            { "title": "SCSS", "percentages": 95 }
+        ],
+        "workedOn": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pr"
     },
     {
         "id": "234423e24438234778b8732128e83",
-        "age": 14,
+        "birthDate": "05.02.2008",
         "name": "Кононов Кирилл",
         "description": "Изучаю Frontend в течение полутора лет, живу в Кыргызстане и достаточно доволен текущим результатом. Учусь в 9 классе, после окончания курсов хочу трудоустроится на работу.",
         "image": "",
         "projects": [],
-        "qualities": [],
+        "qualities": [
+            "67rdca3eeb7f6fgeed471101",
+            "67rdca3eeb7f6fgeed4711012",
+            "67rdca3eeb7f6fgeed471100"
+        ],
         "social": {},
-        "javaScript": 80,
-        "react": 70,
-        "scss": 95,
+        "skils": [
+            { "title": "JavaScript", "percentages": 80 },
+            { "title": "React", "percentages": 50 },
+            { "title": "SCSS", "percentages": 95 }
+        ],
         "workedOn": "Работал над Redux, сделал архитектуру облачной базы данных, HOC"
     },
     {
         "id": "634872364234723e2347237b32432",
-        "age": 26,
+        "birthDate": "26.05.1996",
         "name": "Владислав Колесников",
         "description": "Состоял в отношениях с муниципальными закупками, но через 3 года изменил им с фронтендом",
         "image": "",
         "projects": [],
-        "qualities": [],
+        "qualities": [
+            "67rdca3eeb7f6fgeed471101",
+            "67rdca3eeb7f6fgeed4711012",
+            "67rdca3eeb7f6fgeed471102"
+        ],
         "social": {},
-        "javaScript": 80,
-        "react": 70,
-        "scss": 95,
+        "skils": [
+            { "title": "JavaScript", "percentages": 80 },
+            { "title": "React", "percentages": 50 },
+            { "title": "SCSS", "percentages": 95 }
+        ],
         "workedOn": "Разрабатывал компоненты Badge, Footer"
     },
     {
         "id": "8766453230724e982364842b32474",
-        "age": "undefined",
+        "birthDate": "31.05.1987",
         "name": "Максим Иванов",
         "description": "",
         "image": "",
         "projects": [],
-        "qualities": [],
+        "qualities": [
+            "67rdca3eeb7f6fgeed471101",
+            "67rdca3eeb7f6fgeed4711012",
+            "67rdca3eeb7f6fgeed471103"
+        ],
         "social": {},
-        "javaScript": 80,
-        "react": 70,
-        "scss": 95,
+        "skils": [
+            { "title": "JavaScript", "percentages": 80 },
+            { "title": "React", "percentages": 50 },
+            { "title": "SCSS", "percentages": 95 }
+        ],
         "workedOn": ""
     },
     {
         "id": "7234989238496e0473823677b7f23",
-        "age": "undefined",
+        "birthDate": "22.05.1997",
         "name": "Марат Абдурахманов",
         "description": "",
         "image": "",
         "projects": [],
-        "qualities": [],
+        "qualities": [
+            "67rdca3eeb7f6fgeed471101",
+            "67rdca3eeb7f6fgeed4711012",
+            ""
+        ],
         "social": {},
-        "javaScript": 80,
-        "react": 70,
-        "scss": 95,
+        "skils": [
+            { "title": "JavaScript", "percentages": 80 },
+            { "title": "React", "percentages": 50 },
+            { "title": "SCSS", "percentages": 95 }
+        ],
         "workedOn": ""
     }
 ]

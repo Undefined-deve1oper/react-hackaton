@@ -1,13 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Badge = ({ text, className = 'defaul', bgColor = '', textColor = '' }) => {
-
+const Badge = ({
+    text,
+    className = "default",
+    bgColor = "",
+    textColor = ""
+}) => {
     if (!text.length) {
         return null;
     }
 
-    return <span className={`badge badge_${className}`} style={{ backgroundColor: bgColor, color: textColor }}>{text}</span>;
+    return (
+        <span
+            className={`badge badge_${className}`}
+            style={{ backgroundColor: bgColor, color: textColor }}
+        >
+            {text}
+        </span>
+    );
 };
 
 Badge.propTypes = {
