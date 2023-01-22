@@ -12,12 +12,14 @@ import ProgressBar from "../../common/ProgressBar";
 import MainSlider from "../../ui/MainSlider";
 import { getDeveloperById } from "../../../store/slices/developers";
 import { useParams } from "react-router";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getQualitiesListByIds } from "../../../store/slices/qualities";
 import ReviewsList from "../../ui/Reviews/ReviewsList/ReviewsList";
-import { getIsLoggedIn } from "../../../store/slices/auth";
+import { getAuthUserId, getIsLoggedIn } from "../../../store/slices/auth";
 import StyledNavLink from "../../common/StyledNavLink";
 import ReviewsForm from "../../ui/Forms/ReviewsForm/ReviewsForm";
+import { createFavourite } from "../../../store/slices/favourites";
+import { nanoid } from "@reduxjs/toolkit";
 
 const DeveloperPage = () => {
     const { developerId } = useParams();
@@ -28,8 +30,16 @@ const DeveloperPage = () => {
     const types = ["horizontal", "circle"];
     const currentType = types[random(0, types.length - 1)];
     const isLoggedIn = useSelector(getIsLoggedIn());
+    const userId = useSelector(getAuthUserId());
+    const dispatch = useDispatch();
 
     const handlerFav = () => {
+        const favourite = {
+            pageId: developerId,
+            userId,
+            id: nanoid()
+        };
+        dispatch(createFavourite(favourite));
         setFav((prev) => !prev);
     };
 

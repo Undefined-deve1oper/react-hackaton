@@ -5,19 +5,22 @@ import { Link, useParams } from "react-router-dom";
 import Button from "../Button";
 import SvgIcon from "../SvgIcon";
 import Badge from "../Badge";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getQualitiesListByIds } from "../../../store/slices/qualities";
 import { getDeveloperById } from "../../../store/slices/developers";
+import { createFavourite } from "../../../store/slices/favourites";
 
 const DeveloperCard = ({ id, type = "list" }) => {
     const developer = useSelector(getDeveloperById(id));
     const qualities = useSelector(getQualitiesListByIds(developer.qualities));
+    const dispatch = useDispatch();
     const [fav, setFav] = useState(true);
 
     const age = getAge(developer.birthDate);
 
     const handlerFav = () => {
         setFav((prev) => !prev);
+        dispatch(createFavourite(developer));
     };
 
     return (

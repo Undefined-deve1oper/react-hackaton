@@ -84,7 +84,7 @@ export const createFavourite = (payload) => async (dispatch) => {
     }
 };
 
-export const getFavourites = (state) => state.favourites.entities;
+export const getFavourites = () => (state) => state.favourites.entities;
 export const getFavouritesLoadingStatus = (state) => state.favourites.isLoading;
 export const getCurrentUserFavourite = (id) => (state) =>
     state.favourites.entities.find((item) => item.personId === id);
