@@ -1,6 +1,15 @@
 // Circle
+.circle-progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 200px;
+    margin-bottom: 15px;
+}
+
 .circle-progress {
-    margin: 150px auto;
+    margin: 0;
     width: 150px;
     height: 150px;
     background: #fefcff;
@@ -51,12 +60,10 @@
     transform: rotate(calc(1.8deg * var(--i)));
     // transform: rotate(var(--i));
 }
+
 // .circle-progress {}
 .circle-progress__label {
-    position: absolute;
-    left: 30%;
-    top: 110%;
-    text-transform: uppercase;
+    text-align: center;
     font-weight: 400;
 }
 
@@ -64,6 +71,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(calc(1.8deg * var(--i)));
     }

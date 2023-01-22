@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import BreadCrumbs from "../components/common/BreadCrumbs";
 import Container from "../components/common/Container";
@@ -7,11 +8,11 @@ import Footer from "../components/common/Footer";
 import Header from "../components/common/Header";
 import Main from "../components/common/Main";
 import DeveloperPage from "../components/pages/DeveloperPage";
-import team from "../config/team.json";
+import { getDevelopersList } from "../store/slices/developers";
 
 const Developers = () => {
     const { developerId } = useParams();
-    const developer = team.find((d) => d.id === developerId);
+    const developers = useSelector(getDevelopersList());
 
     return (
         <>
@@ -23,7 +24,7 @@ const Developers = () => {
                         <DeveloperPage />
                     ) : (
                         <DeveloperList
-                            list={team}
+                            list={developers}
                             type="list"
                             showSwitchPanel
                         />

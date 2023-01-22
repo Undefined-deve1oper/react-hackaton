@@ -39,7 +39,7 @@ export const loadDevelopersList = () => async (dispatch) => {
 };
 
 export const getDevelopersList = () => (state) => {
-    return state.developers.entities || null;
+    return state.developers.entities ? state.developers.entities : null;
 };
 export const getDeveloperById = (id) => (state) => {
     return state.developers.entities

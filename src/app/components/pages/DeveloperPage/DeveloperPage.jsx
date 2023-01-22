@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import {
     declOfNum,
     getAge,
-    getRandomColor
+    getRandomColor,
+    random
 } from "../../../utils/helpFunctions";
 import Button from "../../common/Button";
 import SvgIcon from "../../common/SvgIcon";
@@ -13,13 +14,16 @@ import MainSlider from "../../ui/MainSlider";
 import { getDeveloperById } from "../../../store/slices/developers";
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
+import { getQualitiesListByIds } from "../../../store/slices/qualities";
 
 const DeveloperPage = () => {
     const { developerId } = useParams();
     const developer = useSelector(getDeveloperById(developerId));
-    console.log(developer);
-    const [fav, setFav] = useState(developer.isFavourite);
+    const qualities = useSelector(getQualitiesListByIds(developer.qualities));
+    const [fav, setFav] = useState(true);
     const age = getAge(developer.birthDate);
+    const types = ["horizontal", "circle"];
+    const currentType = types[random(0, types.length - 1)];
 
     const handlerFav = () => {
         setFav((prev) => !prev);
@@ -63,7 +67,7 @@ const DeveloperPage = () => {
 
                     <div className="developer-card_info_proffession">
                         {age} {declOfNum(age, ["год", "года", "лет"])},{" "}
-                        <span>{developer.proffession}</span>
+                        <span>{developer.profession}</span>
                     </div>
 
                     <div className="developer-card_info_desc">
@@ -73,15 +77,23 @@ const DeveloperPage = () => {
                     {developer.skills?.length ? (
                         <div className="developer-card_info_skills">
                             <h3>Навыки</h3>
-
-                            {developer.skills.map((skill) => (
-                                <ProgressBar
-                                    key={`${skill.title}_${skill.percentages}`}
-                                    color={getRandomColor()}
-                                    percentages={skill.percentages}
-                                    text={skill.title}
-                                />
-                            ))}
+                            <div
+                                className={`developer-card_info_skills-container ${currentType}`}
+                            >
+                                {developer.skills.map((skill) => (
+                                    <div
+                                        key={`${skill.title}_${skill.percentages}`}
+                                        className={`developer-card_info_skill ${currentType}`}
+                                    >
+                                        <ProgressBar
+                                            color={getRandomColor()}
+                                            percentages={skill.percentages}
+                                            text={skill.title}
+                                            type={currentType}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     ) : null}
 

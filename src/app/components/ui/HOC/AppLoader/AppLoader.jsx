@@ -5,17 +5,23 @@ import {
     getDevelopersLoadingStatus,
     loadDevelopersList
 } from "../../../../store/slices/developers";
+import {
+    getQualitiesLoadingStatus,
+    loadQualitiesList
+} from "../../../../store/slices/qualities";
 import Loader from "../../../common/Loader";
 
 const AppLoader = ({ children }) => {
     const dispatch = useDispatch();
     const developersLoading = useSelector(getDevelopersLoadingStatus());
+    const qualitiesLoading = useSelector(getQualitiesLoadingStatus());
 
     useEffect(() => {
         dispatch(loadDevelopersList());
+        dispatch(loadQualitiesList());
     }, []);
 
-    if (developersLoading) {
+    if (developersLoading && qualitiesLoading) {
         return <Loader />;
     }
 

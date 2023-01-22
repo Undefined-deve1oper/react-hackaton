@@ -54,7 +54,7 @@ const DeveloperList = ({ list, type = "list", showSwitchPanel = false }) => {
 };
 
 DeveloperList.propTypes = {
-    list: PropTypes.arrayOf(PropTypes.object).isRequired,
+    list: PropTypes.arrayOf(PropTypes.object),
     type: PropTypes.string,
     showSwitchPanel: PropTypes.bool
 };

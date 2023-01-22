@@ -4,15 +4,18 @@ import Container from "../../common/Container";
 import principlesBlock from "../../../config/principlesBlock.json";
 import clientsBlock from "../../../config/clientsBlock.json";
 import DeveloperList from "../../common/DeveloperList";
-import team from "../../../config/team.json";
+import { useSelector } from "react-redux";
+import { getDevelopersList } from "../../../store/slices/developers";
 
 const HomePage = () => {
+    const developers = useSelector(getDevelopersList());
+
     return (
         <>
             <Container>
                 <Advantages {...principlesBlock} />
                 <Advantages {...clientsBlock} />
-                <DeveloperList list={team} type="flat" />
+                <DeveloperList list={developers} type="flat" />
             </Container>
         </>
     );
