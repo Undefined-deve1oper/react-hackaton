@@ -4,30 +4,31 @@ import TeamListCard from "../TeamListCard/TeamListCard";
 import Button from '../Button';
 
 const TeamList = ({ list, type = 'list', showSwitchPanel = false }) => {
-	const [currentType, setCurrentType] = useState(type);
+    const [currentType, setCurrentType] = useState(type);
 
-	const switchPanel = [
-		{
-			title: 'Плиткой',
-			value: 'flat'
-		},
-		{
-			title: 'Списком',
-			value: 'list'
-		}
-	];
+    const switchPanel = [
+        {
+            title: 'Плиткой',
+            value: 'flat'
+        },
+        {
+            title: 'Списком',
+            value: 'list'
+        }
+    ];
 
-	const handleSwitch = (value) => {
-		setCurrentType(value);
-	}
+    const handleSwitch = (value) => {
+        setCurrentType(value);
+    }
 
-	return (
+    return (
         <div className="team-list-block">
             {showSwitchPanel ? (
                 <div className="team-list-block_switch-panel">
                     {switchPanel.map((element) => (
                         <Button
                             styleType="default"
+                            className={element.value === currentType ? 'switch-active' : ''}
                             key={element.value}
                             onClick={() => handleSwitch(element.value)}
                         >
@@ -49,9 +50,9 @@ const TeamList = ({ list, type = 'list', showSwitchPanel = false }) => {
 }
 
 TeamList.propTypes = {
-	list: PropTypes.arrayOf(PropTypes.object).isRequired,
-	type: PropTypes.string,
-	showSwitchPanel: PropTypes.bool
+    list: PropTypes.arrayOf(PropTypes.object).isRequired,
+    type: PropTypes.string,
+    showSwitchPanel: PropTypes.bool
 }
 
 export default TeamList;
