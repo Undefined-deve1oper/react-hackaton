@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Button = ({children, styleType = 'animate', color = 'DarkMagenta', rounding = true, ...rest}) => {
+const Button = ({ children, styleType = 'animate', color = 'DarkMagenta', rounding = true, ...rest }) => {
     // styleType there are: 'animate', 'default', 'none'
     return (
         <button
             className={styleType + (rounding ? ' rounding ' : "")}
-            style={{backgroundColor: color}}
+            style={{ backgroundColor: color }}
             {...rest}
         >
             {children}
