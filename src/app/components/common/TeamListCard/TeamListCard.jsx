@@ -1,14 +1,16 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import person from "../../../assets/images/person.jpg";
 import SvgIcon from "../SvgIcon";
 import Button from "../Button";
 import { declOfNum, getAge } from "../../../utils/helpFunctions";
 import Badge from "../Badge";
+import { Link } from "react-router-dom";
 
 const TeamListCard = ({
     type = "list",
+    id,
     name,
+    photo,
     birthDate,
     proffession,
     description,
@@ -28,9 +30,9 @@ const TeamListCard = ({
             <div className="team-list-card_container">
                 <div className="team-list-card_image-block">
                     <div className="team-list-card_image">
-                        <a href="/">
-                            <img src={person} alt={name} />
-                        </a>
+                        <Link to={`/developers/${id}`} >
+                            <img src={photo} alt={name} />
+                        </Link>
 
                         <Button
                             styleType="none"
@@ -47,7 +49,7 @@ const TeamListCard = ({
 
                 <div className="team-list-card_content">
                     <h3 className="team-list-card_name">
-                        <a href="/">{name}</a>
+                        <Link to={`/developers/${id}`}>{name}</Link>
                     </h3>
 
                     <div className="team-list-card_proffession">
@@ -70,12 +72,14 @@ const TeamListCard = ({
                     <div className="team-list-card_desc">{description}</div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
 TeamListCard.propTypes = {
+    id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
+    photo: PropTypes.string.isRequired,
     birthDate: PropTypes.string.isRequired,
     proffession: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
