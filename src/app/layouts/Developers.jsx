@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet } from "react-router";
 import BreadCrumbs from "../components/common/BreadCrumbs";
 import Container from "../components/common/Container";
 import Footer from "../components/common/Footer";
@@ -12,9 +13,7 @@ const Developers = () => {
             <Header />
             <Main>
                 <BreadCrumbs />
-                <Container>
-                    <DeveloperPage />
-                </Container>
+                <Outlet />
             </Main>
             <Footer />
         </>

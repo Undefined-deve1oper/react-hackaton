@@ -1,5 +1,6 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import TeamList from "./components/common/TeamList";
 
 const Home = React.lazy(() => import("./layouts/Home"));
 const Favorites = React.lazy(() => import("./layouts/Favourites"));
@@ -27,12 +28,16 @@ const routes = () => {
             element: <Developers />,
             children: [
                 {
-                    path: "",
-                    element: <Navigate to="/" />
+                    path: "/",
+                    element: <TeamList />
                 },
                 {
                     path: ":developerId",
                     element: <DeveloperPage />
+                },
+                {
+                    path: "*",
+                    element: <Navigate to="/" />
                 }
             ]
         },
