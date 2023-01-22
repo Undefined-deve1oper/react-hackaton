@@ -1,27 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Container from "../Container";
 import NavBar from "../NavBar";
-
-const navLinks = [
-    { path: "/", name: "Главная", id: 1, linkClass: "menu__link" },
-    {
-        path: "/developers",
-        name: "Наша команда",
-        id: 2
-    },
-    {
-        path: "/favorites",
-        name: "Избранное",
-        id: 3
-    }
-];
+import footerLinks from "../../../config/footerLinks.json";
 
 const Footer = () => {
     return (
         <footer className="footer">
             <Container>
-                <NavBar links={navLinks} className="footer__menu menu" />
+                <NavBar links={footerLinks} className="footer__menu menu" />
                 <p className="rights">
                     © {new Date().getFullYear()} Developers, Inc. All rights
                     reserved.

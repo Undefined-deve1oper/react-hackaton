@@ -3,7 +3,7 @@ import Container from "../Container";
 import StyledNavLink from "../StyledNavLink";
 import SvgIcon from "../SvgIcon/SvgIcon";
 import { useLocation } from "react-router-dom";
-import navLinks from "../../../config/navLinks.json";
+import breadCrumbsLinks from "../../../config/breadCrumbsLinks.json";
 
 const BreadСrumbs = () => {
     const location = useLocation();
@@ -11,8 +11,8 @@ const BreadСrumbs = () => {
     const arrayPathName = pathName.split("/").filter((x) => x);
     const breadcrumbsArray = arrayPathName.map((name, index) => {
         const path = "/" + arrayPathName.slice(0, index + 1).join("/");
-        const indexOfText = navLinks.findIndex((n) => n.path === path);
-        const text = navLinks[indexOfText]?.name;
+        const indexOfText = breadCrumbsLinks.findIndex((n) => n.path === path);
+        const text = breadCrumbsLinks[indexOfText]?.name;
         return { text, path };
     });
 

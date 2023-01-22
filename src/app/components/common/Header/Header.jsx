@@ -8,7 +8,8 @@ import Button from "../../common/Button";
 import { useNavigate } from "react-router-dom";
 import Burger from "../Burger";
 import SvgIcon from "../SvgIcon/SvgIcon";
-import navLinks from "../../../config/navLinks.json";
+import headerLinks from "../../../config/headerLinks.json";
+import footerLinks from "../../../config/footerLinks.json";
 
 const Header = () => {
     const [isOpen, setOpen] = useState(false);
@@ -30,7 +31,10 @@ const Header = () => {
             <Container>
                 <div className="header__container">
                     <Logo />
-                    <NavBar links={navLinks} className={"header__menu menu"} />
+                    <NavBar
+                        links={headerLinks}
+                        className={"header__menu menu"}
+                    />
                     <div className={"header__actions actions-header"}>
                         {isLoggedIn && <NavProfile />}
                         <div className={"actions-header__button"}>
@@ -55,7 +59,7 @@ const Header = () => {
                     </div>
                 </div>
 
-                <MobileMenu links={navLinks} open={isOpen} />
+                <MobileMenu links={footerLinks} open={isOpen} />
             </Container>
         </header>
     );
