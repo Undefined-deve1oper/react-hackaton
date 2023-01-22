@@ -1,10 +1,10 @@
 import React from "react";
-import BreadСrumbs from "../components/common/BreadСrumbs";
 import Container from "../components/common/Container";
 import Footer from "../components/common/Footer";
 import Header from "../components/common/Header";
 import Main from "../components/common/Main";
 import ProgressBar from "../components/common/ProgressBar";
+import BreadCrumbs from "../components/common/BreadCrumbs";
 
 const testData = [
     { bgcolor: "red", completed: "25", text: "JS" },
@@ -17,7 +17,7 @@ const Favorites = () => {
         <>
             <Header />
             <Main>
-                <BreadСrumbs />
+                <BreadCrumbs />
                 <Container>
                     {testData.map((item) => (
                         <ProgressBar

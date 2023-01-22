@@ -1,2 +1,2 @@
-import BreadСrumbs from "./BreadСrumbs";
-export default BreadСrumbs;
+import BreadCrumbs from "./BreadCrumbs";
+export default BreadCrumbs;
