@@ -111,32 +111,21 @@
     }
 }
 
-
-
 .default {
-    border: none;
     color: white;
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
     cursor: pointer;
+    background: $infoColor;
+    transition: all 0.3s ease 0s;
 
     &:hover {
-        background: linear-gradient(90deg, transparent, $infoColor);
+        background: $hoverInfoColor;
     }
 }
 
-// .none {
-//     border: none;
-//     color: white;
-//     padding: 5px 10px;
-//     text-align: center;
-//     text-decoration: none;
-//     display: inline-block;
-//     font-size: 16px;
-//     margin: 4px 2px;
-//     cursor: pointer;
-// }
+.none {
+    cursor: pointer;
+}

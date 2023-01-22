@@ -3,49 +3,34 @@ import PropTypes from "prop-types";
 
 const Button = ({
     children,
-    styleType = "default",
-    color = "DarkMagenta",
+    styleType,
+    color,
+    bgColor,
     rounding,
     className,
     ...rest
 }) => {
-    if (styleType === "animate") {
-        return (
-            <button
-                className={className + ` ${styleType}`}
-                style={{ backgroundColor: color, borderRadius: rounding }}
-                {...rest}
-            >
-                {children}
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        );
-    }
-    if (styleType === "none") {
-        return (
-            <button
-                className={className}
-                style={{ backgroundColor: color, borderRadius: rounding }}
-                {...rest}
-            >
-                {children}
-            </button>
-        );
-    }
-    if (styleType === "default") {
-        return (
-            <button
-                className={className + ` ${styleType}`}
-                style={{ backgroundColor: color, borderRadius: rounding }}
-                {...rest}
-            >
-                {children}
-            </button>
-        );
-    }
+    return (
+        <button
+            className={className + ` ${styleType}`}
+            style={{ backgroundColor: color, borderRadius: rounding }}
+            {...rest}
+        >
+            {children}
+            {styleType === "animate" && (
+                <>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </>
+            )}
+        </button>
+    );
+};
+
+Button.defaultProps = {
+    styleType: "default"
 };
 
 Button.propTypes = {
@@ -55,6 +40,7 @@ Button.propTypes = {
     ]).isRequired,
     styleType: PropTypes.string,
     color: PropTypes.string,
+    bgColor: PropTypes.string,
     rounding: PropTypes.string
 };
 
