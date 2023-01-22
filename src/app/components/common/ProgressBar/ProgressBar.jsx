@@ -28,7 +28,7 @@ const ProgressBar = ({
     if (type === "circle") {
         return (
             <div id="progress-circle" class="progress-circle">
-                <span id="progress">0%</span>
+                <span id="progress">{progress}%</span>
             </div>
         );
     }
