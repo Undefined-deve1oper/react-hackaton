@@ -1,11 +1,16 @@
 import PropTypes from "prop-types";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getIsLoading, loadUsersList } from "../../../../store/slices/auth";
+import {
+    getAuthUserId,
+    getIsLoading,
+    loadUsersList
+} from "../../../../store/slices/auth";
 import {
     getDevelopersLoadingStatus,
     loadDevelopersList
 } from "../../../../store/slices/developers";
+import { loadFavouritesList } from "../../../../store/slices/favourites";
 import {
     getQualitiesLoadingStatus,
     loadQualitiesList
@@ -14,6 +19,7 @@ import Loader from "../../../common/Loader";
 
 const AppLoader = ({ children }) => {
     const dispatch = useDispatch();
+    const userId = useSelector(getAuthUserId());
     const developersLoading = useSelector(getDevelopersLoadingStatus());
     const qualitiesLoading = useSelector(getQualitiesLoadingStatus());
     const usersLoading = useSelector(getIsLoading());
@@ -23,6 +29,11 @@ const AppLoader = ({ children }) => {
         dispatch(loadQualitiesList());
         dispatch(loadUsersList());
     }, []);
+    useEffect(() => {
+        if (userId) {
+            dispatch(loadFavouritesList(userId));
+        }
+    }, [userId]);
 
     if (usersLoading && developersLoading && qualitiesLoading) {
         return <Loader />;

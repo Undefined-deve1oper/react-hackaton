@@ -14,6 +14,10 @@ import { getDeveloperById } from "../../../store/slices/developers";
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
 import { getQualitiesListByIds } from "../../../store/slices/qualities";
+import ReviewsList from "../../ui/Reviews/ReviewsList/ReviewsList";
+import { getIsLoggedIn } from "../../../store/slices/auth";
+import StyledNavLink from "../../common/StyledNavLink";
+import ReviewsForm from "../../ui/Forms/ReviewsForm/ReviewsForm";
 
 const DeveloperPage = () => {
     const { developerId } = useParams();
@@ -23,94 +27,114 @@ const DeveloperPage = () => {
     const age = getAge(developer.birthDate);
     const types = ["horizontal", "circle"];
     const currentType = types[random(0, types.length - 1)];
+    const isLoggedIn = useSelector(getIsLoggedIn());
 
     const handlerFav = () => {
         setFav((prev) => !prev);
     };
 
-    return (
-        <div className="developer-card">
-            <div className="developer-card_info">
-                <div className="developer-card_info_left">
-                    <div className="developer-card_info_image-block">
-                        <img src={developer.photo} alt={developer.name} />
-                        <Button
-                            styleType="none"
-                            className="developer-card_favourite"
-                            onClick={handlerFav}
-                        >
-                            <SvgIcon
-                                name="heart"
-                                svgClass={fav ? "favourite-active" : ""}
-                            />
-                        </Button>
-                    </div>
-
-                    {qualities?.length ? (
-                        <div className="developer-card_info_qualities">
-                            {qualities.map((quality) => (
-                                <Badge
-                                    key={quality.id}
-                                    text={quality.name}
-                                    className={quality.color}
-                                />
-                            ))}
-                        </div>
-                    ) : null}
-                </div>
-
-                <div className="developer-card_info_right">
-                    <div className="developer-card_info_name">
-                        <h1>{developer.name}</h1>
-                    </div>
-
-                    <div className="developer-card_info_proffession">
-                        {age} {declOfNum(age, ["год", "года", "лет"])},{" "}
-                        <span>{developer.profession}</span>
-                    </div>
-
-                    <div className="developer-card_info_desc">
-                        {developer.description}
-                    </div>
-
-                    {developer.skills?.length ? (
-                        <div className="developer-card_info_skills">
-                            <h3>Навыки</h3>
-                            <div
-                                className={`developer-card_info_skills-container ${currentType}`}
+    if (developer && qualities) {
+        return (
+            <div className="developer-card">
+                <div className="developer-card_info">
+                    <div className="developer-card_info_left">
+                        <div className="developer-card_info_image-block">
+                            <img src={developer.photo} alt={developer.name} />
+                            <Button
+                                styleType="none"
+                                className="developer-card_favourite"
+                                onClick={handlerFav}
                             >
-                                {developer.skills.map((skill) => (
-                                    <div
-                                        key={`${skill.title}_${skill.percentages}`}
-                                        className={`developer-card_info_skill ${currentType}`}
-                                    >
-                                        <ProgressBar
-                                            color={getRandomColor()}
-                                            percentages={skill.percentages}
-                                            text={skill.title}
-                                            type={currentType}
-                                        />
-                                    </div>
+                                <SvgIcon
+                                    name="heart"
+                                    svgClass={fav ? "favourite-active" : ""}
+                                />
+                            </Button>
+                        </div>
+
+                        {qualities?.length ? (
+                            <div className="developer-card_info_qualities">
+                                {qualities.map((quality) => (
+                                    <Badge
+                                        key={quality.id}
+                                        text={quality.name}
+                                        className={quality.color}
+                                    />
                                 ))}
                             </div>
-                        </div>
-                    ) : null}
+                        ) : null}
+                    </div>
 
-                    <div className="developer-card_info_worked">
-                        <h3>Работал над</h3>
-                        {developer.workedOn}
+                    <div className="developer-card_info_right">
+                        <div className="developer-card_info_name">
+                            <h1>{developer.name}</h1>
+                        </div>
+
+                        <div className="developer-card_info_proffession">
+                            {age} {declOfNum(age, ["год", "года", "лет"])},{" "}
+                            <span>{developer.profession}</span>
+                        </div>
+
+                        <div className="developer-card_info_desc">
+                            {developer.description}
+                        </div>
+
+                        {developer.skills?.length ? (
+                            <div className="developer-card_info_skills">
+                                <h3>Навыки</h3>
+                                <div
+                                    className={`developer-card_info_skills-container ${currentType}`}
+                                >
+                                    {developer.skills.map((skill) => (
+                                        <div
+                                            key={`${skill.title}_${skill.percentages}`}
+                                            className={`developer-card_info_skill ${currentType}`}
+                                        >
+                                            <ProgressBar
+                                                color={getRandomColor()}
+                                                percentages={skill.percentages}
+                                                text={skill.title}
+                                                type={currentType}
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        ) : null}
+
+                        <div className="developer-card_info_worked">
+                            <h3>Работал над</h3>
+                            {developer.workedOn}
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            {developer.projects?.length ? (
-                <div className="developer-card_projects">
-                    <h2>Проекты</h2>
-                    <MainSlider items={developer.projects} />
+                {developer.projects?.length ? (
+                    <div className="developer-card_projects">
+                        <h2>Проекты</h2>
+                        <MainSlider items={developer.projects} />
+                    </div>
+                ) : null}
+
+                <h3 className={"developer__projects developer__reviews_title"}>
+                    Можете это обсудить
+                </h3>
+                <div className="developer__reviews">
+                    <ReviewsList />
                 </div>
-            ) : null}
-        </div>
-    );
+                {isLoggedIn ? (
+                    <ReviewsForm />
+                ) : (
+                    <div>
+                        Чтобы оставлять отзывы необходимо{" "}
+                        <StyledNavLink to="/login/signin">
+                            войти в аккаунт
+                        </StyledNavLink>
+                    </div>
+                )}
+            </div>
+        );
+    }
 };
 
 export default DeveloperPage;

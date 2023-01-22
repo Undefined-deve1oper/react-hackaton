@@ -4,6 +4,7 @@ import Footer from "../components/common/Footer";
 import Header from "../components/common/Header";
 import Main from "../components/common/Main";
 import BreadCrumbs from "../components/common/BreadCrumbs";
+import FavouritesPage from "../components/pages/FavouritesPage";
 
 const Favorites = () => {
     return (
@@ -11,7 +12,9 @@ const Favorites = () => {
             <Header />
             <Main>
                 <BreadCrumbs />
-                <Container></Container>
+                <Container>
+                    <FavouritesPage />
+                </Container>
             </Main>
             <Footer />
         </>
