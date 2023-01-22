@@ -8,8 +8,9 @@ import TeamList from "../../common/TeamList";
 const HomePage = () => {
     const team = [
         {
-            id: 1,
+            id: "1",
             name: "Александр Окуловских",
+            photo: "https://images03.nicepage.io/c461c07a441a5d220e8feb1a/02db0d16743e5259b4926be5/4.jpg",
             birthDate: "31.05.1987",
             proffession: "творческий лидер",
             description:
@@ -29,8 +30,9 @@ const HomePage = () => {
             ]
         },
         {
-            id: 2,
+            id: "2",
             name: "Александр Окуловских",
+            photo: "https://images03.nicepage.io/c461c07a441a5d220e8feb1a/02db0d16743e5259b4926be5/4.jpg",
             birthDate: "24.12.1997",
             proffession: "программист от бога",
             description:
@@ -50,8 +52,9 @@ const HomePage = () => {
             ]
         },
         {
-            id: 3,
+            id: "3",
             name: "Александр Окуловских",
+            photo: "https://images03.nicepage.io/c461c07a441a5d220e8feb1a/02db0d16743e5259b4926be5/4.jpg",
             birthDate: "31.05.2002",
             proffession: "душа компании",
             description:
@@ -59,8 +62,9 @@ const HomePage = () => {
             isFavourite: true
         },
         {
-            id: 4,
+            id: "4",
             name: "Александр Окуловских",
+            photo: "https://images03.nicepage.io/c461c07a441a5d220e8feb1a/02db0d16743e5259b4926be5/4.jpg",
             birthDate: "09.12.1978",
             proffession: "завхоз",
             description:
@@ -68,8 +72,9 @@ const HomePage = () => {
             isFavourite: false
         },
         {
-            id: 5,
+            id: "5",
             name: "Александр Окуловских",
+            photo: "https://images03.nicepage.io/c461c07a441a5d220e8feb1a/02db0d16743e5259b4926be5/4.jpg",
             birthDate: "17.01.2002",
             proffession: "директор всея Руси",
             description:
@@ -83,7 +88,7 @@ const HomePage = () => {
             <Container>
                 <Advantages {...principlesBlock} />
                 <Advantages {...clientsBlock} />
-                <TeamList list={team} type="flat" showSwitchPanel />
+                <TeamList list={team} type="flat" />
             </Container>
         </>
     );
