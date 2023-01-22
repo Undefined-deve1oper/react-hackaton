@@ -1,5 +1,6 @@
 .project-slider {
     cursor: grab;
+
     & .slider {
         width: 100%;
         aspect-ratio: 16/9;
@@ -19,26 +20,46 @@
             justify-content: center;
 
             background: $infoColor;
-            transition: all 0.3s ease 0s;
-
+            transition: background-color 0.3s ease 0s;
+            transform: translateY(-50%);
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
+
             z-index: 10;
+
+            @media (max-width: $xs) {
+                background-color: #cccccc40;
+            }
 
             @media (any-hover: hover) {
                 &:hover {
                     background: $hoverInfoColor;
+
+                    @media (max-width: $xs) {
+                        background-color: #cccccc40;
+                    }
                 }
             }
 
             &.prev {
-                left: 30px;
+                left: 10px;
+
+                @media (max-width: $xs) {
+                    left: -10px;
+                }
+
             }
+
             &.next {
-                right: 30px;
-                transform: rotate(-180deg);
+                right: 10px;
+                transform: translateY(-50%) rotate(180deg);
+
+                @media (max-width: $xs) {
+                    right: -10px;
+                }
+
             }
+
             &.disabled {
                 opacity: 0.6;
                 pointer-events: none;
