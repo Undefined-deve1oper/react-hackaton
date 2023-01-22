@@ -1,0 +1,12 @@
+[
+    {
+        "path": "/favorites",
+        "name": "Избранное",
+        "id": 1
+    },
+    {
+        "path": "/developers",
+        "name": "Наша команда",
+        "id": 2
+    }
+]

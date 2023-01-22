@@ -8,15 +8,7 @@ import Button from "../../common/Button";
 import { useNavigate } from "react-router-dom";
 import Burger from "../Burger";
 import SvgIcon from "../SvgIcon/SvgIcon";
-
-const navLinks = [
-    { path: "/", name: "Наша команда", id: 1, linkClass: "menu__link" },
-    {
-        path: "/favorites",
-        name: "Избранное",
-        id: 2
-    }
-];
+import navLinks from "../../../config/navLinks.json";
 
 const Header = () => {
     const [isOpen, setOpen] = useState(false);
