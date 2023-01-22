@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const ProjectSlider = ({ items, className, ...rest }) => {
+    console.log(className);
     return (
         <Swiper
             navigation={true}
@@ -21,8 +22,13 @@ const ProjectSlider = ({ items, className, ...rest }) => {
             {...rest}
         >
             {items.map((item) => (
-                <SwiperSlide key={item} className={className}>
-                    <img src={item} alt={item} className={className} />
+                <SwiperSlide key={item}>
+                    <div
+                        className={className}
+                        style={{
+                            backgroundImage: `url(${item})`
+                        }}
+                    ></div>
                 </SwiperSlide>
             ))}
         </Swiper>
