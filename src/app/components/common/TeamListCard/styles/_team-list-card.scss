@@ -99,8 +99,8 @@
 		}
 
 		svg.favourite-active {
-			fill: #dc2f2f;
-			stroke: #dc2f2f;
+			fill: $infoColor;
+			stroke: $infoColor;
 		}
 	}
 
@@ -144,7 +144,7 @@
 		margin-bottom: 15px;
 
 		span {
-			color: #dc2f2f;
+			color: $infoColor;
 		}
 	}
 
