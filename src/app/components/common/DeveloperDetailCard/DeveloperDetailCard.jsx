@@ -9,7 +9,7 @@ import {
 import ProgressBar from "../ProgressBar";
 import Button from "../Button";
 import SvgIcon from "../SvgIcon";
-import ProjectSlider from "../../ui/ProjectSlider copy/projectSlider";
+import MainSlider from "../../ui/MainSlider";
 
 const DeveloperDetailCard = ({
     name,
@@ -100,7 +100,7 @@ const DeveloperDetailCard = ({
             {projects?.length ? (
                 <div className="developer-card_projects">
                     <h2>Проекты</h2>
-                    <ProjectSlider items={projects} />
+                    <MainSlider items={projects} />
                 </div>
             ) : null}
         </div>

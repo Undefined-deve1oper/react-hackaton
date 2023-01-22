@@ -8,7 +8,7 @@ import SvgIcon from "../../common/SvgIcon";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const ProjectSlider = ({ items, className, ...rest }) => {
+const MainSlider = ({ items, className, ...rest }) => {
     return (
         <Swiper
             navigation={{
@@ -54,14 +54,14 @@ const ProjectSlider = ({ items, className, ...rest }) => {
     );
 };
 
-ProjectSlider.defaultProps = {
+MainSlider.defaultProps = {
     pagination: true
 };
 
-ProjectSlider.propTypes = {
+MainSlider.propTypes = {
     items: PropTypes.array.isRequired,
     className: PropTypes.string,
     pagination: PropTypes.bool.isRequired
 };
 
-export default ProjectSlider;
+export default MainSlider;
