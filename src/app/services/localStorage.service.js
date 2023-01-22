@@ -22,7 +22,7 @@ export const getLocalId = () => {
     return localStorage.getItem(USER_LOCAL_ID);
 };
 
-export const getJwtExpires = () => {
+export const getJWTExpires = () => {
     return localStorage.getItem(JWT_EXPIRES_KEY);
 };
 
@@ -37,7 +37,7 @@ export default {
     setTokens,
     getAccessToken,
     getLocalId,
-    getJwtExpires,
+    getJWTExpires,
     removeUserData,
     getRefreshToken
 };

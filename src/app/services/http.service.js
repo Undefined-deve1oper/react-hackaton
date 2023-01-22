@@ -1,5 +1,7 @@
 import axios from "axios";
 import configFile from "../config.json";
+import authService from "./auth.service";
+import localStorageService from "./localStorage.service";
 
 const http = axios.create({
     baseURL: configFile.apiEndpoint
@@ -11,6 +13,22 @@ http.interceptors.request.use(
             const containSlash = /\/$/gi.test(config.url);
             config.url =
                 (containSlash ? config.url.slice(0, -1) : config.url) + ".json";
+            const expiresDate = localStorageService.getJWTExpires();
+            const refreshToken = localStorageService.getRefreshToken();
+            if (refreshToken && Date.now() > expiresDate) {
+                const data = await authService.refresh();
+                localStorageService.setTokens({
+                    refreshToken: data.refresh_token,
+                    idToken: data.id_token,
+                    expiresIn: data.expires_in,
+                    localId: data.user_id
+                });
+                const accessToken = localStorageService.getAccessToken();
+                if (accessToken) {
+                    config.params = { ...config.params, auth: accessToken };
+                }
+            }
+            return config;
         }
         return config;
     },
@@ -28,12 +46,14 @@ function transformData(data) {
 
 http.interceptors.response.use(
     (res) => {
+        if (res.data === null) return res;
         if (configFile.isFireBase) {
             res.data = { content: transformData(res.data) };
         }
         return res;
     },
     function (error) {
+        // Ожидаемы ошибки
         const expectedErrors =
             error.response &&
             error.response.status >= 400 &&
