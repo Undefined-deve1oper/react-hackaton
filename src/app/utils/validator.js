@@ -12,7 +12,7 @@ export const validator = (data, config) => {
                 statusValidate = !emailRegExp.test(value);
                 break;
             case "isContainCapitalSymbol":
-                const capitalRegExp = /[A-Z]/g.test(value);
+                const capitalRegExp = /[A-Z]/g;
                 statusValidate = !capitalRegExp.test(value);
                 break;
             case "min":

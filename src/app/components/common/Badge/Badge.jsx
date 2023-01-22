@@ -11,8 +11,8 @@ Badge.defaultProps = {
 };
 
 Badge.propTypes = {
-    text: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired
+    text: PropTypes.string,
+    color: PropTypes.string
 };
 
 export default Badge;
