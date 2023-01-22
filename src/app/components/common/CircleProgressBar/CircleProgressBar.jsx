@@ -3,36 +3,38 @@ import PropTypes from "prop-types";
 
 const CircleProgressBar = ({ percentages, text, color }) => {
     return (
-        <div className="circle-progress">
-            <div className="circle">
-                <div
-                    style={{
-                        "--i": `${percentages}`,
-                        backgroundColor: color
-                    }}
-                    className="mask full"
-                >
+        <div className="circle-progress-container">
+            <div className="circle-progress">
+                <div className="circle">
                     <div
                         style={{
                             "--i": `${percentages}`,
-                            backgroundColor: color
                         }}
-                        className="fill"
-                    ></div>
+                        className="mask full"
+                    >
+                        <div
+                            style={{
+                                "--i": `${percentages}`,
+                                backgroundColor: color
+                            }}
+                            className="fill"
+                        ></div>
+                    </div>
+                    <div className="mask half">
+                        <div
+                            style={{
+                                "--i": `${percentages}`,
+                                backgroundColor: color
+                            }}
+                            className="fill"
+                        ></div>
+                    </div>
+                    <div className="inside-circle">{`${percentages}%`}</div>
+
                 </div>
-                <div className="mask half">
-                    <div
-                        style={{
-                            "--i": `${percentages}`,
-                            backgroundColor: color
-                        }}
-                        className="fill"
-                    ></div>
-                </div>
-                <div className="inside-circle">{`${percentages}%`}</div>
-                <div className="circle-progress__label">
-                    {text} - {`${percentages}%`}
-                </div>
+            </div>
+            <div className="circle-progress__label">
+                {text} - {`${percentages}%`}
             </div>
         </div>
     );

@@ -4,7 +4,8 @@ import Badge from "../Badge";
 import {
     declOfNum,
     getAge,
-    getRandomColor
+    getRandomColor,
+    random
 } from "../../../utils/helpFunctions";
 import ProgressBar from "../ProgressBar";
 import Button from "../Button";
@@ -23,8 +24,11 @@ const DeveloperDetailCard = ({
     projects,
     isFavourite
 }) => {
+
     const [fav, setFav] = useState(isFavourite);
     const age = getAge(birthDate);
+    const types = ['horizontal', 'circle'];
+    const currentType = types[random(0, types.length - 1)];
 
     const handlerFav = () => {
         setFav((prev) => !prev);
@@ -78,15 +82,18 @@ const DeveloperDetailCard = ({
                     {skills?.length ? (
                         <div className="developer-card_info_skills">
                             <h3>Навыки</h3>
-
-                            {skills.map((skill) => (
-                                <ProgressBar
-                                    key={`${skill.title}_${skill.percentages}`}
-                                    color={getRandomColor()}
-                                    percentages={skill.percentages}
-                                    text={skill.title}
-                                />
-                            ))}
+                            <div className={`developer-card_info_skills-container ${currentType}`}>
+                                {skills.map((skill) => (
+                                    <div key={`${skill.title}_${skill.percentages}`} className={`developer-card_info_skill ${currentType}`}>
+                                        <ProgressBar
+                                            color={getRandomColor()}
+                                            percentages={skill.percentages}
+                                            text={skill.title}
+                                            type={currentType}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     ) : null}
 
