@@ -10,10 +10,6 @@ const Button = ({
 }) => {
     return (
         <button className={"button"} {...rest}>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
             {children}
         </button>
     );
