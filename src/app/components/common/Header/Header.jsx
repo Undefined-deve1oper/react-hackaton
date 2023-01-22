@@ -10,11 +10,14 @@ import Burger from "../Burger";
 import SvgIcon from "../SvgIcon/SvgIcon";
 import headerLinks from "../../../config/headerLinks.json";
 import footerLinks from "../../../config/footerLinks.json";
+import { useDispatch, useSelector } from "react-redux";
+import { getCurrentUser, logout } from "../../../store/slices/auth";
 
 const Header = () => {
     const [isOpen, setOpen] = useState(false);
     const navigation = useNavigate();
-    const isLoggedIn = false;
+    const currentUser = useSelector(getCurrentUser());
+    const dispatch = useDispatch();
 
     const handleToggleMenu = () => {
         setOpen((prevState) => !prevState);
@@ -23,7 +26,7 @@ const Header = () => {
         navigation("/login/signin");
     };
     const logOut = () => {
-        console.log("dfsfsd");
+        dispatch(logout());
     };
 
     return (
@@ -36,14 +39,11 @@ const Header = () => {
                         className={"header__menu menu"}
                     />
                     <div className={"header__actions actions-header"}>
-                        {isLoggedIn && <NavProfile />}
+                        {currentUser && <NavProfile />}
                         <div className={"actions-header__button"}>
-                            {!isLoggedIn ? (
-                                <Button styleType="animate" onClick={goLogin}>
-                                    Вход
-                                </Button>
-                            ) : (
-                                <button
+                            {currentUser ? (
+                                <Button
+                                    styleType={"none"}
                                     className="actions-header__logout"
                                     onClick={logOut}
                                 >
@@ -52,7 +52,11 @@ const Header = () => {
                                         width="30"
                                         height="36"
                                     />
-                                </button>
+                                </Button>
+                            ) : (
+                                <Button styleType="animate" onClick={goLogin}>
+                                    Вход
+                                </Button>
                             )}
                         </div>
                         <Burger open={isOpen} onToggle={handleToggleMenu} />

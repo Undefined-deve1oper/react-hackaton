@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { getIsLoading, loadUsersList } from "../../../../store/slices/auth";
 import {
     getDevelopersLoadingStatus,
     loadDevelopersList
@@ -15,13 +16,15 @@ const AppLoader = ({ children }) => {
     const dispatch = useDispatch();
     const developersLoading = useSelector(getDevelopersLoadingStatus());
     const qualitiesLoading = useSelector(getQualitiesLoadingStatus());
+    const usersLoading = useSelector(getIsLoading());
 
     useEffect(() => {
         dispatch(loadDevelopersList());
         dispatch(loadQualitiesList());
+        dispatch(loadUsersList());
     }, []);
 
-    if (developersLoading && qualitiesLoading) {
+    if (usersLoading && developersLoading && qualitiesLoading) {
         return <Loader />;
     }
 
