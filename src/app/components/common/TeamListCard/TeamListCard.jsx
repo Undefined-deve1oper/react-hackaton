@@ -45,7 +45,7 @@ const TeamListCard = ({ type = 'list', name, birthDate, proffession, description
 						type === 'list' && qualities?.length ?
 							<div className='team-list-card_qualities'>
 								{qualities.map(quality => (
-									<Badge key={quality.id} text={quality.name} color={quality.color} />
+									<Badge key={quality.id} text={quality.name} className={quality.color} />
 								))}
 							</div>
 							: null
