@@ -15,7 +15,7 @@ const DeveloperPage = () => {
             proffession: "творческий лидер",
             description:
                 "Работал в электроэнергетике инженером и начальником смены электроцеха. Мне очень нравилась эта сфера, но решил перейти в программирование из-за большей свободы и возможностей",
-            isFavourite: false,
+            isFavourite: true,
             qualities: [
                 {
                     id: "67rdca3eeb7f6fgeed471101",
@@ -27,6 +27,18 @@ const DeveloperPage = () => {
                     color: "green",
                     name: "Команда 2"
                 }
+            ],
+            skills: [
+                { "title": "JavaScript", "percentages": 80 },
+                { "title": "React", "percentages": 50 },
+                { "title": "SCSS", "percentages": 95 }
+            ],
+            workedOn: "Делал все что хотел, а что не хотел не делал",
+            projects: [
+                "https://i.pinimg.com/originals/83/a8/a5/83a8a505477607b7e73a5345e87b1688.jpg",
+                "https://w-dog.ru/wallpapers/10/14/425754534279151/luk-ozero-nacionalnyj-park-banf-alberta-kanada-gory-nebo-oblaka-ozero-derevya.jpg",
+                "https://kartinkin.net/uploads/posts/2022-02/1645443783_6-kartinkin-net-p-kartinki-krasota-prirodi-7.jpg",
+                "https://bugaga.ru/uploads/posts/2022-08/1660840053_priroda-4.jpg"
             ]
         },
         {
