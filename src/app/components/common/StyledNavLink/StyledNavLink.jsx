@@ -2,12 +2,18 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const StyledNavLink = ({ children, to, className = "", ...rest }) => {
+const StyledNavLink = ({
+    children,
+    to,
+    end = false,
+    className = "",
+    ...rest
+}) => {
     const classNavLink = ({ isActive }) =>
         isActive ? className + " _active" : className;
 
     return (
-        <NavLink className={classNavLink} to={to} end {...rest}>
+        <NavLink className={classNavLink} end={end} to={to} {...rest}>
             {children}
         </NavLink>
     );
@@ -19,6 +25,7 @@ StyledNavLink.propTypes = {
         PropTypes.node
     ]),
     to: PropTypes.string.isRequired,
+    end: PropTypes.bool,
     className: PropTypes.string
 };
 
