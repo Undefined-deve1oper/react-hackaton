@@ -2,11 +2,10 @@ import React from "react";
 import Logo from "../../../common/Logo";
 import StyledNavLink from "../../../common/StyledNavLink";
 import SignInForm from "../../../ui/Forms/Login/SignInForm/SignInForm";
-import withStyledFormComponent from "../../../ui/HOC/withStyledFormComponent";
 
 const SignInPage = () => {
     return (
-        <>
+        <div className="login">
             <div className="login__info login-info">
                 <div className="login-info__logo">
                     <Logo />
@@ -30,8 +29,7 @@ const SignInPage = () => {
                 </p>
                 <SignInForm />
             </div>
-        </>
+        </div>
     );
 };
-const StyledSignIpPage = withStyledFormComponent(SignInPage);
-export default StyledSignIpPage;
+export default SignInPage;

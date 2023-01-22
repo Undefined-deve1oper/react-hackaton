@@ -1,9 +1,7 @@
 import React from "react";
-import withStyledFormComponent from "../../../ui/HOC/withStyledFormComponent";
 
 const SignUpPage = () => {
-    return <></>;
+    return <div className="login"></div>;
 };
 
-const StyledSignUpPage = withStyledFormComponent(SignUpPage);
-export default StyledSignUpPage;
+export default SignUpPage;

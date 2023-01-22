@@ -17,24 +17,22 @@ const BreadСrumbs = () => {
 
     return (
         <div className="breadcrumbs">
-            <Container>
-                <div className="breadcrumbs__container">
-                    <StyledNavLink to={"/"} className={"breadcrumbs__item"} end>
-                        <SvgIcon name="home" width="20" height="19" />
-                        Home /
+            <div className="breadcrumbs__container">
+                <StyledNavLink to={"/"} className={"breadcrumbs__item"} end>
+                    <SvgIcon name="home" width="20" height="19" />
+                    Home /
+                </StyledNavLink>
+                {breadcrumbsArray.map((item) => (
+                    <StyledNavLink
+                        key={item.path}
+                        to={item.path}
+                        className={"breadcrumbs__item"}
+                        end
+                    >
+                        {item.text}
                     </StyledNavLink>
-                    {breadcrumbsArray.map((item) => (
-                        <StyledNavLink
-                            key={item.path}
-                            to={item.path}
-                            className={"breadcrumbs__item"}
-                            end
-                        >
-                            {item.text}
-                        </StyledNavLink>
-                    ))}
-                </div>
-            </Container>
+                ))}
+            </div>
         </div>
     );
 };
