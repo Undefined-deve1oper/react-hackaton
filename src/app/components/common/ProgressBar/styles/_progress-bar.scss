@@ -1,4 +1,30 @@
 // Circle
+.progress-cricle {
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+    color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background: #07070c;
+    text-align: center;
+
+    & .title {
+        position: relative;
+        z-index: 100;
+    }
+
+    &.overlay {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background-color: #07070c;
+    }
+}
 
 .progress-circle {
     -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
@@ -7,26 +33,15 @@
     margin: -82px 0 0 -82px;
     background: #f3f3f3;
     border-radius: 100%;
-    position: absolute;
-    overflow: hidden;
-    height: 164px;
-    width: 164px;
-    left: 50%;
-    top: 50%;
+    position: relative;
 }
 
 .progress-circle #progress {
-    -webkit-box-shadow: 0 1px 0 0.5px #d6d7d8;
-    box-shadow: 0 1px 0 0.5px #d6d7d8;
     font-family: "Montserrat", sans-serif;
-    margin: -70px 0 0 -70px;
     border-radius: 100%;
-    position: absolute;
     text-align: center;
-    line-height: 140px;
     background: #fff;
     font-size: 34px;
-    color: #46494d;
     height: 140px;
     width: 140px;
     z-index: 1;

@@ -17,8 +17,8 @@ const Favorites = () => {
         <>
             <Header />
             <Main>
+                <BreadСrumbs />
                 <Container>
-                    <BreadСrumbs />
                     {testData.map((item) => (
                         <ProgressBar
                             progress={item.completed}

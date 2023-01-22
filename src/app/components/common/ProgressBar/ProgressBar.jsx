@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import SvgIcon from "../SvgIcon/SvgIcon";
 
-const ProgressBar = ({
-    progress = "",
-    text = "",
-    color = "blue",
-    type = "circle"
-}) => {
+const ProgressBar = ({ progress = "", text = "", color = "blue" }) => {
     const [progressStyle, setProgressStyle] = useState({});
 
     // Идея с анимацией была взята со статьи https://reactjsexample.com/a-linear-progressbar-component-for-react/
@@ -25,14 +21,6 @@ const ProgressBar = ({
         };
     }, []);
 
-    if (type === "circle") {
-        return (
-            <div id="progress-circle" class="progress-circle">
-                <span id="progress">0%</span>
-            </div>
-        );
-    }
-
     return (
         <>
             <div className="progress__text">{text}</div>
@@ -48,8 +36,7 @@ const ProgressBar = ({
 ProgressBar.propTypes = {
     progress: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    color: PropTypes.string,
-    type: PropTypes.string
+    color: PropTypes.string
 };
 
 export default ProgressBar;
