@@ -9,7 +9,7 @@ const DeveloperPage = () => {
         {
             id: "1",
             name: "Александр Окуловских",
-            photo: "https://images03.nicepage.io/c461c07a441a5d220e8feb1a/02db0d16743e5259b4926be5/4.jpg",
+            photo: "https://static.wikia.nocookie.net/3e307faf-14ad-437f-a0e1-c2c6a8799316/scale-to-width/755",
             birthDate: "31.05.1987",
             proffession: "творческий лидер",
             description:
@@ -28,9 +28,11 @@ const DeveloperPage = () => {
                 }
             ],
             skills: [
-                { title: "JavaScript", percentages: 80 },
+                { title: "JavaScript", percentages: 10 },
                 { title: "React", percentages: 50 },
-                { title: "SCSS", percentages: 95 }
+                { title: "SCSS", percentages: 95 },
+                { title: "Спать", percentages: 25 },
+                { title: "Запой", percentages: 60 },
             ],
             workedOn: "Делал все что хотел, а что не хотел не делал",
             projects: [
@@ -43,7 +45,7 @@ const DeveloperPage = () => {
         {
             id: "2",
             name: "Александр Окуловских",
-            photo: "https://images03.nicepage.io/c461c07a441a5d220e8feb1a/02db0d16743e5259b4926be5/4.jpg",
+            photo: "https://lh3.googleusercontent.com/1WySVjTdhA_XXG6oh58n2N2_g2YhP5D8puO1aC7jWZ64aEL2z3jNG2yPaB-KcwtX1u98dl1TU7pzI1SOhDNk4soNTrJ24VR02iHo=w1400-k",
             birthDate: "24.12.1997",
             proffession: "программист от бога",
             description:
@@ -65,7 +67,7 @@ const DeveloperPage = () => {
         {
             id: "3",
             name: "Александр Окуловских",
-            photo: "https://images03.nicepage.io/c461c07a441a5d220e8feb1a/02db0d16743e5259b4926be5/4.jpg",
+            photo: "https://static10.tgstat.ru/channels/_0/81/81732c4d065d777232cb6043ee275176.jpg",
             birthDate: "31.05.2002",
             proffession: "душа компании",
             description:
@@ -75,7 +77,7 @@ const DeveloperPage = () => {
         {
             id: "4",
             name: "Александр Окуловских",
-            photo: "https://images03.nicepage.io/c461c07a441a5d220e8feb1a/02db0d16743e5259b4926be5/4.jpg",
+            photo: "https://pictures.telegram-store.com/channels/black-investor23/597_2022_02_14_1_.jpg",
             birthDate: "09.12.1978",
             proffession: "завхоз",
             description:
@@ -85,7 +87,7 @@ const DeveloperPage = () => {
         {
             id: "5",
             name: "Александр Окуловских",
-            photo: "https://images03.nicepage.io/c461c07a441a5d220e8feb1a/02db0d16743e5259b4926be5/4.jpg",
+            photo: "https://ethereumnews.ru/wp-content/uploads/2022/08/9741.png",
             birthDate: "17.01.2002",
             proffession: "директор всея Руси",
             description:

@@ -23,6 +23,10 @@ export function getAge(dateString) {
 	return age;
 }
 
+export function random(min, max) {
+	return Math.round(min - 0.5 + Math.random() * (max - min + 1))
+}
+
 export function getRandomColor() {
 	const letters = "0123456789ABCDEF";
 	let color = "#";
