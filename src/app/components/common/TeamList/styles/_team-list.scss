@@ -9,7 +9,17 @@
 		margin-bottom: 15px;
 
 		button {
-			background-color: #ccc;
+			background-color: #e3e3e3;
+			color: $mainColor;
+
+			&:hover {
+				color: #fff;
+			}
+
+			&.switch-active {
+				background-color: $infoColor;
+				color: #fff;
+			}
 
 			&:first-child {
 				border-radius: 10px 0 0 10px;
