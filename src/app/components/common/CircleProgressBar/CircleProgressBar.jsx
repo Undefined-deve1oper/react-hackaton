@@ -8,7 +8,7 @@ const CircleProgressBar = ({ percentages, text, color }) => {
                 <div className="circle">
                     <div
                         style={{
-                            "--i": `${percentages}`,
+                            "--i": `${percentages}`
                         }}
                         className="mask full"
                     >
@@ -30,7 +30,6 @@ const CircleProgressBar = ({ percentages, text, color }) => {
                         ></div>
                     </div>
                     <div className="inside-circle">{`${percentages}%`}</div>
-
                 </div>
             </div>
             <div className="circle-progress__label">

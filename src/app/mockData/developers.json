@@ -1,97 +1,74 @@
 [
     {
-        "id": "2332423e32442u32427876b321323",
-        "birthDate": "30.07.1994",
-        "description": "Работал в электроэнергетике инженером и начальником смены электроцеха. Мне очень нравилась эта сфера, но решил перейти в программирование из-за большей свободы и возможностей.",
-        "image": "",
-        "projects": [],
-        "qualities": ["67rdca3eeb7f6fgeed471101", "67rdca3eeb7f6fgeed4711012"],
-        "social": { "telegram": "https://t.me/Alex_Conglomerate" },
-        "skils": [
-            { "title": "JavaScript", "percentages": 80 },
-            { "title": "React", "percentages": 50 },
-            { "title": "SCSS", "percentages": 95 }
-        ],
-        "workedOn": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pr"
-    },
-    {
-        "id": "234423e24438234778b8732128e83",
-        "birthDate": "05.02.2008",
-        "name": "Кононов Кирилл",
-        "description": "Изучаю Frontend в течение полутора лет, живу в Кыргызстане и достаточно доволен текущим результатом. Учусь в 9 классе, после окончания курсов хочу трудоустроится на работу.",
-        "image": "",
-        "projects": [],
-        "qualities": [
-            "67rdca3eeb7f6fgeed471101",
-            "67rdca3eeb7f6fgeed4711012",
-            "67rdca3eeb7f6fgeed471100"
-        ],
-        "social": {},
-        "skils": [
-            { "title": "JavaScript", "percentages": 80 },
-            { "title": "React", "percentages": 50 },
-            { "title": "SCSS", "percentages": 95 }
-        ],
-        "workedOn": "Работал над Redux, сделал архитектуру облачной базы данных, HOC"
-    },
-    {
-        "id": "634872364234723e2347237b32432",
-        "birthDate": "26.05.1996",
-        "name": "Владислав Колесников",
-        "description": "Состоял в отношениях с муниципальными закупками, но через 3 года изменил им с фронтендом",
-        "image": "",
-        "projects": [],
-        "qualities": [
-            "67rdca3eeb7f6fgeed471101",
-            "67rdca3eeb7f6fgeed4711012",
-            "67rdca3eeb7f6fgeed471102"
-        ],
-        "social": {},
-        "skils": [
-            { "title": "JavaScript", "percentages": 80 },
-            { "title": "React", "percentages": 50 },
-            { "title": "SCSS", "percentages": 95 }
-        ],
-        "workedOn": "Разрабатывал компоненты Badge, Footer"
-    },
-    {
-        "id": "8766453230724e982364842b32474",
+        "id": "23476722389238e832899344433",
         "birthDate": "31.05.1987",
         "name": "Максим Иванов",
-        "description": "",
-        "image": "",
-        "projects": [],
+        "description": "Работал в электроэнергетике инженером и начальником смены электроцеха. Мне очень нравилась эта сфера, но решил перейти в программирование из-за большей свободы и возможностей.",
+        "profession": "программист",
+        "photo": "https://static.wikia.nocookie.net/3e307faf-14ad-437f-a0e1-c2c6a8799316/scale-to-width/755",
+        "projects": [
+            "https://i.pinimg.com/originals/83/a8/a5/83a8a505477607b7e73a5345e87b1688.jpg",
+            "https://static.kinguin.net/media/images/products/6137b374b3bc0400014247cc_4313f32f68be0139e500ddc94d0ca7ee.jpg",
+            "https://vsegda-pomnim.com/uploads/posts/2022-04/1649125442_21-vsegda-pomnim-com-p-krasivie-vidi-prirodi-foto-25.jpg"
+        ],
         "qualities": [
             "67rdca3eeb7f6fgeed471101",
             "67rdca3eeb7f6fgeed4711012",
             "67rdca3eeb7f6fgeed471103"
         ],
-        "social": {},
-        "skils": [
-            { "title": "JavaScript", "percentages": 80 },
-            { "title": "React", "percentages": 50 },
-            { "title": "SCSS", "percentages": 95 }
+        "social": {
+            "telegram": "texhapb87"
+        },
+        "skills": [
+            {
+                "title": "JavaScript",
+                "percentages": 10
+            },
+            {
+                "title": "React",
+                "percentages": 50
+            },
+            {
+                "title": "SCSS",
+                "percentages": 35
+            }
         ],
-        "workedOn": ""
+        "workedOn": "Делал что хотел, а остальное доделывали другие"
     },
     {
-        "id": "7234989238496e0473823677b7f23",
-        "birthDate": "22.05.1997",
-        "name": "Марат Абдурахманов",
-        "description": "",
-        "image": "",
-        "projects": [],
+        "id": "8766453230724e982364842b32474",
+        "birthDate": "05.02.2008",
+        "name": "Кирилл Кононов",
+        "description": "Всю жизнь мечтал сделать fast Company и вот мечта осуществилась.",
+        "profession": "идейных вдохновитель",
+        "photo": "https://static.wikia.nocookie.net/3e307faf-14ad-437f-a0e1-c2c6a8799316/scale-to-width/755",
+        "projects": [
+            "https://placepic.ru/wp-content/uploads/2018/10/osen_derevya_ozero_tuman.jpg",
+            "https://avatars.mds.yandex.net/i?id=4304b6be8fb90d9cde8a26c2a0f81c5b-5866271-images-thumbs&ref=rim&n=33&w=480&h=300",
+            "https://i.pinimg.com/originals/86/5a/49/865a4962c17ba0a38dc34956dcc447c5.jpg"
+        ],
         "qualities": [
             "67rdca3eeb7f6fgeed471101",
             "67rdca3eeb7f6fgeed4711012",
-            ""
+            "67rdca3eeb7f6fgeed471103"
         ],
-        "social": {},
-        "skils": [
-            { "title": "JavaScript", "percentages": 80 },
-            { "title": "React", "percentages": 50 },
-            { "title": "SCSS", "percentages": 95 }
+        "social": {
+            "telegram": "kononov1"
+        },
+        "skills": [
+            {
+                "title": "JavaScript",
+                "percentages": 90
+            },
+            {
+                "title": "React",
+                "percentages": 50
+            },
+            {
+                "title": "SCSS",
+                "percentages": 45
+            }
         ],
-        "workedOn": ""
+        "workedOn": "Отправил всех спать, а сам доделывал"
     }
 ]

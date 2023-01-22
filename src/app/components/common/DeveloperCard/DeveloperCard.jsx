@@ -1,25 +1,20 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import SvgIcon from "../SvgIcon";
-import Button from "../Button";
 import { declOfNum, getAge } from "../../../utils/helpFunctions";
+import { Link, useParams } from "react-router-dom";
+import Button from "../Button";
+import SvgIcon from "../SvgIcon";
 import Badge from "../Badge";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { getQualitiesListByIds } from "../../../store/slices/qualities";
+import { getDeveloperById } from "../../../store/slices/developers";
 
-const TeamListCard = ({
-    type = "list",
-    id,
-    name,
-    photo,
-    birthDate,
-    proffession,
-    description,
-    isFavourite,
-    qualities
-}) => {
-    const [fav, setFav] = useState(isFavourite);
+const DeveloperCard = ({ id, type = "list" }) => {
+    const developer = useSelector(getDeveloperById(id));
+    const qualities = useSelector(getQualitiesListByIds(developer.qualities));
+    const [fav, setFav] = useState(true);
 
-    const age = getAge(birthDate);
+    const age = getAge(developer.birthDate);
 
     const handlerFav = () => {
         setFav((prev) => !prev);
@@ -30,8 +25,8 @@ const TeamListCard = ({
             <div className="team-list-card_container">
                 <div className="team-list-card_image-block">
                     <div className="team-list-card_image">
-                        <Link to={`/developers/${id}`} >
-                            <img src={photo} alt={name} />
+                        <Link to={`/developers/${id}`}>
+                            <img src={developer.photo} alt={developer.name} />
                         </Link>
 
                         <Button
@@ -49,12 +44,12 @@ const TeamListCard = ({
 
                 <div className="team-list-card_content">
                     <h3 className="team-list-card_name">
-                        <Link to={`/developers/${id}`}>{name}</Link>
+                        <Link to={`/developers/${id}`}>{developer.name}</Link>
                     </h3>
 
                     <div className="team-list-card_proffession">
                         {age} {declOfNum(age, ["год", "года", "лет"])},{" "}
-                        <span>{proffession}</span>
+                        <span>{developer.profession}</span>
                     </div>
 
                     {type === "list" && qualities?.length ? (
@@ -69,22 +64,13 @@ const TeamListCard = ({
                         </div>
                     ) : null}
 
-                    <div className="team-list-card_desc">{description}</div>
+                    <div className="team-list-card_desc">
+                        {developer.description}
+                    </div>
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 
-TeamListCard.propTypes = {
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    photo: PropTypes.string.isRequired,
-    birthDate: PropTypes.string.isRequired,
-    proffession: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    isFavourite: PropTypes.bool,
-    qualities: PropTypes.arrayOf(PropTypes.object)
-};
-
-export default TeamListCard;
+export default DeveloperCard;

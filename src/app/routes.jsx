@@ -4,6 +4,9 @@ import { Navigate } from "react-router-dom";
 const Home = React.lazy(() => import("./layouts/Home"));
 const Favorites = React.lazy(() => import("./layouts/Favourites"));
 const Developers = React.lazy(() => import("./layouts/Developers"));
+const DeveloperList = React.lazy(() =>
+    import("./components/common/DeveloperList")
+);
 const DeveloperPage = React.lazy(() =>
     import("./components/pages/DeveloperPage")
 );
@@ -28,11 +31,15 @@ const routes = () => {
             children: [
                 {
                     path: "",
-                    element: <Navigate to="/" />
+                    element: <DeveloperList />
                 },
                 {
                     path: ":developerId",
                     element: <DeveloperPage />
+                },
+                {
+                    path: "*",
+                    element: <Navigate to="/" />
                 }
             ]
         },
