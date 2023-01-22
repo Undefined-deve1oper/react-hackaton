@@ -1,16 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Container from "../components/common/Container";
-import BreadCrumbs from "../components/common/BreadСrumbs";
 
 const Login = () => {
     return (
-        <>
+        <div className="wrapper">
             <Container>
-                <BreadCrumbs />
                 <Outlet />
             </Container>
-        </>
+        </div>
     );
 };
 

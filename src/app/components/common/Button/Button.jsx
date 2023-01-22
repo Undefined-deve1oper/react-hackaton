@@ -8,13 +8,9 @@ const Button = ({
     rounding = true,
     ...rest
 }) => {
-    // styleType there are: 'animate', 'default', 'none'
     return (
-        <button
-            className={styleType + (rounding ? " rounding " : "")}
-            style={{ backgroundColor: color }}
-            {...rest}
-        >
+        <button className={"button"} {...rest}>
+            <span></span>
             <span></span>
             <span></span>
             <span></span>
@@ -23,20 +19,11 @@ const Button = ({
     );
 };
 
-Button.defaultProps = {
-    styleType: "animate",
-    color: "DarkMagenta",
-    rounding: false
-};
-
 Button.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.node,
         PropTypes.arrayOf(PropTypes.node)
-    ]).isRequired,
-    styleType: PropTypes.string,
-    color: PropTypes.string,
-    rounding: PropTypes.bool
+    ])
 };
 
 export default Button;
