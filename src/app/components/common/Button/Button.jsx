@@ -3,21 +3,49 @@ import PropTypes from "prop-types";
 
 const Button = ({
     children,
-    styleType = "animate",
+    styleType = "default",
     color = "DarkMagenta",
-    rounding = true,
+    rounding,
+    className,
     ...rest
 }) => {
-    // styleType there are: 'animate', 'default', 'none'
-    return (
-        <button
-            className={styleType + (rounding ? " rounding " : "")}
-            style={{ backgroundColor: color }}
-            {...rest}
-        >
-            {children}
-        </button>
-    );
+    if (styleType === "animate") {
+        return (
+            <button
+                className={className + ` ${styleType}`}
+                style={{ backgroundColor: color, borderRadius: rounding }}
+                {...rest}
+            >
+                {children}
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        );
+    }
+    if (styleType === "none") {
+        return (
+            <button
+                className={className}
+                style={{ backgroundColor: color, borderRadius: rounding }}
+                {...rest}
+            >
+                {children}
+            </button>
+        );
+    }
+    if (styleType === "default") {
+        return (
+            <button
+                className={className + ` ${styleType}`}
+                style={{ backgroundColor: color, borderRadius: rounding }}
+                {...rest}
+            >
+                {children}
+            </button>
+        );
+    }
 };
 
 Button.propTypes = {
@@ -27,7 +55,7 @@ Button.propTypes = {
     ]).isRequired,
     styleType: PropTypes.string,
     color: PropTypes.string,
-    rounding: PropTypes.bool
+    rounding: PropTypes.string
 };
 
 export default Button;
