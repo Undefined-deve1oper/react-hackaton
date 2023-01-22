@@ -1,12 +1,12 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import SvgIcon from "../SvgIcon";
-import Button from "../Button";
 import { declOfNum, getAge } from "../../../utils/helpFunctions";
-import Badge from "../Badge";
 import { Link } from "react-router-dom";
+import Button from "../Button";
+import SvgIcon from "../SvgIcon";
+import Badge from "../Badge";
 
-const TeamListCard = ({
+const DeveloperCard = ({
     type = "list",
     id,
     name,
@@ -30,7 +30,7 @@ const TeamListCard = ({
             <div className="team-list-card_container">
                 <div className="team-list-card_image-block">
                     <div className="team-list-card_image">
-                        <Link to={`/developers/${id}`} >
+                        <Link to={`/developers/${id}`}>
                             <img src={photo} alt={name} />
                         </Link>
 
@@ -72,11 +72,11 @@ const TeamListCard = ({
                     <div className="team-list-card_desc">{description}</div>
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 
-TeamListCard.propTypes = {
+DeveloperCard.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     photo: PropTypes.string.isRequired,
@@ -87,4 +87,4 @@ TeamListCard.propTypes = {
     qualities: PropTypes.arrayOf(PropTypes.object)
 };
 
-export default TeamListCard;
+export default DeveloperCard;

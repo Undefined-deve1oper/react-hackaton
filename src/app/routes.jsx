@@ -1,10 +1,12 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import TeamList from "./components/common/TeamList";
 
 const Home = React.lazy(() => import("./layouts/Home"));
 const Favorites = React.lazy(() => import("./layouts/Favourites"));
 const Developers = React.lazy(() => import("./layouts/Developers"));
+const DeveloperList = React.lazy(() =>
+    import("./components/common/DeveloperList")
+);
 const DeveloperPage = React.lazy(() =>
     import("./components/pages/DeveloperPage")
 );
@@ -28,8 +30,8 @@ const routes = () => {
             element: <Developers />,
             children: [
                 {
-                    path: "/",
-                    element: <TeamList />
+                    path: "",
+                    element: <DeveloperList />
                 },
                 {
                     path: ":developerId",

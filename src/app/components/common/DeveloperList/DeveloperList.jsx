@@ -1,25 +1,25 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
-import TeamListCard from "../TeamListCard/TeamListCard";
-import Button from '../Button';
+import { useState } from "react";
+import PropTypes from "prop-types";
+import Button from "../Button";
+import DeveloperCard from "../DeveloperCard";
 
-const TeamList = ({ list, type = 'list', showSwitchPanel = false }) => {
+const DeveloperList = ({ list, type = "list", showSwitchPanel = false }) => {
     const [currentType, setCurrentType] = useState(type);
 
     const switchPanel = [
         {
-            title: 'Плиткой',
-            value: 'flat'
+            title: "Плиткой",
+            value: "flat"
         },
         {
-            title: 'Списком',
-            value: 'list'
+            title: "Списком",
+            value: "list"
         }
     ];
 
     const handleSwitch = (value) => {
         setCurrentType(value);
-    }
+    };
 
     return (
         <div className="team-list-block">
@@ -28,7 +28,11 @@ const TeamList = ({ list, type = 'list', showSwitchPanel = false }) => {
                     {switchPanel.map((element) => (
                         <Button
                             styleType="default"
-                            className={element.value === currentType ? 'switch-active' : ''}
+                            className={
+                                element.value === currentType
+                                    ? "switch-active"
+                                    : ""
+                            }
                             key={element.value}
                             onClick={() => handleSwitch(element.value)}
                         >
@@ -41,18 +45,18 @@ const TeamList = ({ list, type = 'list', showSwitchPanel = false }) => {
             <div className={`team-list ${currentType}`}>
                 {list.map((person) => (
                     <div key={person.id} className="team-list_item">
-                        <TeamListCard {...person} type={currentType} />
+                        <DeveloperCard {...person} type={currentType} />
                     </div>
                 ))}
             </div>
         </div>
     );
-}
+};
 
-TeamList.propTypes = {
+DeveloperList.propTypes = {
     list: PropTypes.arrayOf(PropTypes.object).isRequired,
     type: PropTypes.string,
     showSwitchPanel: PropTypes.bool
-}
+};
 
-export default TeamList;
+export default DeveloperList;
