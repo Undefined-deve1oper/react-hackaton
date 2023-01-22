@@ -7,9 +7,9 @@ import {
     getRandomColor
 } from "../../../utils/helpFunctions";
 import ProgressBar from "../ProgressBar";
-import ProjectSlider from "../../ui/ProjectSlider";
 import Button from "../Button";
 import SvgIcon from "../SvgIcon";
+import ProjectSlider from "../../ui/ProjectSlider copy/projectSlider";
 
 const DeveloperDetailCard = ({
     name,
