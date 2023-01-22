@@ -12,7 +12,7 @@ const ProgressBar = ({ type, ...props }) => {
 };
 
 ProgressBar.defaultProps = {
-    type: "circle"
+    type: "horizontal"
 };
 
 ProgressBar.propTypes = {

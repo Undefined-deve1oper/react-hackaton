@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
+import SliderButton from "../../common/SliderButton";
+import SvgIcon from "../../common/SvgIcon";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import SliderButton from "../../common/SliderButton/SliderButton";
-import SvgIcon from "../../common/SvgIcon";
 
 const ProjectSlider = ({ items, className, ...rest }) => {
     return (
@@ -26,10 +26,10 @@ const ProjectSlider = ({ items, className, ...rest }) => {
             }}
             {...rest}
         >
-            {items.map((item) => (
-                <SwiperSlide key={item}>
+            {items.map((item, index) => (
+                <SwiperSlide key={item + index}>
                     <div
-                        className={className}
+                        className={className + " slider"}
                         style={{
                             backgroundImage: `url(${item})`
                         }}
@@ -39,14 +39,14 @@ const ProjectSlider = ({ items, className, ...rest }) => {
             <SliderButton
                 isNext={false}
                 styleType="none"
-                className={className + "__item prev"}
+                className={className + " slider__item prev"}
             >
                 <SvgIcon name="arrow-left" width="20" height="20" />
             </SliderButton>
             <SliderButton
                 isNext={true}
                 styleType="none"
-                className={className + "__item next"}
+                className={className + " slider__item next"}
             >
                 <SvgIcon name="arrow-left" width="20" height="20" />
             </SliderButton>

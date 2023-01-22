@@ -5,7 +5,6 @@ import DeveloperDetailCard from "../../common/DeveloperDetailCard";
 import TeamList from "../../common/TeamList";
 
 const DeveloperPage = () => {
-
     const team = [
         {
             id: "1",
@@ -29,9 +28,9 @@ const DeveloperPage = () => {
                 }
             ],
             skills: [
-                { "title": "JavaScript", "percentages": 80 },
-                { "title": "React", "percentages": 50 },
-                { "title": "SCSS", "percentages": 95 }
+                { title: "JavaScript", percentages: 80 },
+                { title: "React", percentages: 50 },
+                { title: "SCSS", percentages: 95 }
             ],
             workedOn: "Делал все что хотел, а что не хотел не делал",
             projects: [
@@ -95,25 +94,21 @@ const DeveloperPage = () => {
         }
     ];
 
-
     const { developerId } = useParams();
 
-    const developer = team.find(d => d.id === developerId);
-    console.log(developer);
+    const developer = team.find((d) => d.id === developerId);
 
     return (
         <>
-            {
-                developerId ?
-                    <>
-                        <DeveloperDetailCard {...developer} />
-                    </>
-                    :
-                    <>
-                        <TeamList list={team} type="list" showSwitchPanel />
-                    </>
-            }
-
+            {developerId ? (
+                <>
+                    <DeveloperDetailCard {...developer} />
+                </>
+            ) : (
+                <>
+                    <TeamList list={team} type="list" showSwitchPanel />
+                </>
+            )}
         </>
     );
 };
