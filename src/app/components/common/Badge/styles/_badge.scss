@@ -3,31 +3,39 @@
     border-radius: 5px;
     text-align: center;
     color: black;
-}
 
-.black {
-    background-color: #000;
-    color: aliceblue;
-}
+    &_default {
+        background-color: #3f8458;
+        color: aliceblue;
+    }
 
-.red {
-    background-color: #cb444a;
-    color: aliceblue;
-}
-.yellow {
-    background-color: #f6c244;
-    color: black;
-}
-.green {
-    background-color: #3f8458;
-    color: aliceblue;
-}
-.blue {
-    background-color: #3070f4;
-    color: aliceblue;
-}
+    &_black {
+        background-color: #000;
+        color: aliceblue;
+    }
 
-.soft-blue {
-    background-color: #5dc7ec;
-    color: black;
+    &_red {
+        background-color: #cb444a;
+        color: aliceblue;
+    }
+
+    &_yellow {
+        background-color: #f6c244;
+        color: black;
+    }
+
+    &_green {
+        background-color: #3f8458;
+        color: aliceblue;
+    }
+
+    &_blue {
+        background-color: #3070f4;
+        color: aliceblue;
+    }
+
+    &_soft-blue {
+        background-color: #5dc7ec;
+        color: black;
+    }
 }

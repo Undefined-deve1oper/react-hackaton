@@ -1,5 +1,28 @@
-.team-list {
+.team-list-block {
 
+	padding-top: 15px;
+
+	&_switch-panel {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		margin-bottom: 15px;
+
+		button {
+			background-color: #ccc;
+
+			&:first-child {
+				border-radius: 10px 0 0 10px;
+			}
+
+			&:last-child {
+				border-radius: 0 10px 10px 0;
+			}
+		}
+	}
+}
+
+.team-list {
 	display: flex;
 	margin-bottom: 50px;
 
@@ -7,7 +30,7 @@
 		justify-content: center;
 		flex-wrap: wrap;
 		margin-top: 100px;
-		gap: 115px 30px;
+		gap: 115px 5%;
 	}
 
 	&.list {

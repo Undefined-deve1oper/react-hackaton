@@ -7,8 +7,8 @@ const Logo = () => {
         <NavLink to="/" className={"logo"} end>
             <SvgIcon name="logo" width="25" height="24" />
             <div className="logo__info">
-                <span>React </span>
-                Team 2
+                <span>React</span>
+                Team #1
             </div>
         </NavLink>
     );
