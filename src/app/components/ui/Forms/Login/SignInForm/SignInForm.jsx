@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import useForm from "../../../../../hooks/useForm";
 import { signInValidatorConfig } from "../../../../../utils/validatorConfig";
 import Button from "../../../../common/Button";
@@ -10,6 +11,7 @@ const initialState = {
 };
 
 const SignInForm = () => {
+    const navigate = useNavigate();
     const { data, errors, handleChange, handleKeyDown, validate } = useForm(
         initialState,
         signInValidatorConfig,
@@ -19,7 +21,7 @@ const SignInForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (validate(data)) {
-            console.log("fsdf");
+            navigate("/");
         }
     };
 
@@ -36,12 +38,14 @@ const SignInForm = () => {
                 id="email"
                 name="email"
                 placeholder="Введите email..."
+                autoComplete="off"
             />
             <TextField
                 id="password"
                 name="password"
                 type="password"
                 placeholder="Введите пароль..."
+                autoComplete="off"
             />
             <Button>Войти</Button>
         </FormComponent>
