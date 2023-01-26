@@ -43,16 +43,8 @@ const useMockData = () => {
 
     async function initialize() {
         try {
-            for (const comment of comments) {
-                await httpService.put("comments/" + comment.id, comment);
-                incrementCount();
-            }
             for (const develop of developers) {
                 await httpService.put("developers/" + develop.id, develop);
-                incrementCount();
-            }
-            for (const qual of qualities) {
-                await httpService.put("qualities/" + qual.id, qual);
                 incrementCount();
             }
         } catch (error) {

@@ -1,60 +1,17 @@
 [
     {
-        "id": "23476722389238e832899344433",
-        "birthDate": "31.05.1987",
-        "name": "Максим Иванов",
-        "description": "Работал в электроэнергетике инженером и начальником смены электроцеха. Мне очень нравилась эта сфера, но решил перейти в программирование из-за большей свободы и возможностей.",
-        "profession": "программист",
-        "photo": "https://static.wikia.nocookie.net/3e307faf-14ad-437f-a0e1-c2c6a8799316/scale-to-width/755",
-        "projects": [
-            "https://i.pinimg.com/originals/83/a8/a5/83a8a505477607b7e73a5345e87b1688.jpg",
-            "https://static.kinguin.net/media/images/products/6137b374b3bc0400014247cc_4313f32f68be0139e500ddc94d0ca7ee.jpg",
-            "https://vsegda-pomnim.com/uploads/posts/2022-04/1649125442_21-vsegda-pomnim-com-p-krasivie-vidi-prirodi-foto-25.jpg"
-        ],
-        "qualities": [
-            "67rdca3eeb7f6fgeed471101",
-            "67rdca3eeb7f6fgeed4711012",
-            "67rdca3eeb7f6fgeed471103"
-        ],
-        "social": {
-            "telegram": "texhapb87"
-        },
-        "skills": [
-            {
-                "title": "JavaScript",
-                "percentages": 10
-            },
-            {
-                "title": "React",
-                "percentages": 50
-            },
-            {
-                "title": "SCSS",
-                "percentages": 35
-            }
-        ],
-        "workedOn": "Делал что хотел, а остальное доделывали другие"
-    },
-    {
-        "id": "8766453230724e982364842b32474",
+        "id": "17347346eds7238",
         "birthDate": "05.02.2008",
         "name": "Кирилл Кононов",
-        "description": "Всю жизнь мечтал сделать fast Company и вот мечта осуществилась.",
-        "profession": "идейных вдохновитель",
-        "photo": "https://static.wikia.nocookie.net/3e307faf-14ad-437f-a0e1-c2c6a8799316/scale-to-width/755",
+        "description": "Никогда не рано начать изучать что-то новое. И пока не стало \"уже поздно\" - решил изучить всё, что предлагает этот мир. Осталось ещё чуть-чуть.",
+        "profession": "прирожденный лидер",
+        "photo": "http://aaa.texhapb.tmweb.ru/avatars/1.jpeg",
         "projects": [
-            "https://placepic.ru/wp-content/uploads/2018/10/osen_derevya_ozero_tuman.jpg",
-            "https://avatars.mds.yandex.net/i?id=4304b6be8fb90d9cde8a26c2a0f81c5b-5866271-images-thumbs&ref=rim&n=33&w=480&h=300",
-            "https://i.pinimg.com/originals/86/5a/49/865a4962c17ba0a38dc34956dcc447c5.jpg"
+            "http://aaa.texhapb.tmweb.ru/portfolio/portfolio1.jpg",
+            "http://aaa.texhapb.tmweb.ru/portfolio/portfolio2.jpg"
         ],
-        "qualities": [
-            "67rdca3eeb7f6fgeed471101",
-            "67rdca3eeb7f6fgeed4711012",
-            "67rdca3eeb7f6fgeed471103"
-        ],
-        "social": {
-            "telegram": "kononov1"
-        },
+        "qualities": ["67rdca3eeb7f6fgeed471100", "67rdca3eeb7f6fgeed471103"],
+        "social": {},
         "skills": [
             {
                 "title": "JavaScript",
@@ -62,13 +19,139 @@
             },
             {
                 "title": "React",
-                "percentages": 50
+                "percentages": 80
             },
             {
                 "title": "SCSS",
-                "percentages": 45
+                "percentages": 95
             }
         ],
-        "workedOn": "Отправил всех спать, а сам доделывал"
+        "workedOn": "Создал проект - и всё завертелось: тут коммит, тут пул реквест, там помоги, здесь разрули. Я же всё-таки тимлид!"
+    },
+    {
+        "id": "2s7sa98dasuasjd98",
+        "birthDate": "31.05.1987",
+        "name": "Максим Иванов",
+        "description": "В IT уже давно. Но надо двигаться дальше и вот я здесь. А так всю жизнь мечтал сделать Fast Company и вот, наконец-то, мечта осуществилась.",
+        "profession": "главный по всему",
+        "photo": "http://aaa.texhapb.tmweb.ru/avatars/2.png",
+        "projects": [
+            "http://aaa.texhapb.tmweb.ru/portfolio/portfolio3.jpg",
+            "http://aaa.texhapb.tmweb.ru/portfolio/portfolio4.jpg"
+        ],
+        "qualities": ["67rdca3eeb7f6fgeed471102", "67rdca3eeb7f6fgeed4711012"],
+        "social": {
+            "telegram": "texhapb87"
+        },
+        "skills": [
+            {
+                "title": "JavaScript",
+                "percentages": 70
+            },
+            {
+                "title": "React",
+                "percentages": 75
+            },
+            {
+                "title": "SCSS",
+                "percentages": 90
+            }
+        ],
+        "workedOn": ""
+    },
+    {
+        "id": "3129387128e6772323",
+        "birthDate": "26.05.1996",
+        "name": "Владислав Колесников",
+        "description": "Состоял в отношениях с муниципальными закупками, но через 3 года изменил им с фронтендом",
+        "profession": "всегда готов помочь",
+        "photo": "http://aaa.texhapb.tmweb.ru/avatars/3.png",
+        "projects": [
+            "http://aaa.texhapb.tmweb.ru/portfolio/portfolio5.jpg",
+            "http://aaa.texhapb.tmweb.ru/portfolio/portfolio6.jpg"
+        ],
+        "qualities": ["67rdca3eeb7f6fgeed471101", "67rdca3eeb7f6fgeed4711012"],
+        "social": {
+            "telegram": "moykar"
+        },
+        "skills": [
+            {
+                "title": "JavaScript",
+                "percentages": 70
+            },
+            {
+                "title": "React",
+                "percentages": 65
+            },
+            {
+                "title": "SCSS",
+                "percentages": 50
+            }
+        ],
+        "workedOn": "Работал над всем что надо. Нужен Footer - будет Footer.  Надо Badge - всё будет сделано в лучшем виде."
+    },
+    {
+        "id": "4213123416288267e673",
+        "birthDate": "30.07.1994",
+        "name": "Алексей Рудаков",
+        "description": "Работал в электроэнергетике инженером и начальником смены электроцеха. Мне очень нравилась эта сфера, но решил перейти в программирование из-за большей свободы и возможностей.",
+        "profession": "идейный вдохновитель",
+        "photo": "http://aaa.texhapb.tmweb.ru/avatars/4.jpg",
+        "projects": [
+            "http://aaa.texhapb.tmweb.ru/portfolio/portfolio7.jpg",
+            "http://aaa.texhapb.tmweb.ru/portfolio/portfolio8.jpg"
+        ],
+        "qualities": ["67rdca3eeb7f6fgeed471101", "67rdca3eeb7f6fgeed4711012"],
+        "social": {
+            "telegram": "Alex_Conglomerate"
+        },
+        "skills": [
+            {
+                "title": "JavaScript",
+                "percentages": 70
+            },
+            {
+                "title": "React",
+                "percentages": 65
+            },
+            {
+                "title": "SCSS",
+                "percentages": 50
+            }
+        ],
+        "workedOn": "Навигация, кнопки... За что не возьмусь - всё получается."
+    },
+    {
+        "id": "52397e98347832e0932",
+        "birthDate": "22.05.1997",
+        "name": "Марат Абдурахманов",
+        "description": "Самое главное - чтобы всё работало. Если не знаете как так сделать, тогда зовите меня.",
+        "profession": "мастер на все руки",
+        "photo": "http://aaa.texhapb.tmweb.ru/avatars/5.jpg",
+        "projects": [
+            "http://aaa.texhapb.tmweb.ru/portfolio/portfolio9.jpg",
+            "http://aaa.texhapb.tmweb.ru/portfolio/portfolio10.jpg"
+        ],
+        "qualities": [
+            "67rdca3eeb7f6fgeed471103",
+            "67rdca3eeb7f6fgeed471101",
+            "67rdca3eeb7f6fgeed4711012"
+        ],
+        "social": {},
+        "skills": [
+            {
+                "title": "JavaScript",
+                "percentages": 70
+            },
+            {
+                "title": "React",
+                "percentages": 65
+            },
+            {
+                "title": "SCSS",
+                "percentages": 50
+            }
+        ],
+        "workedOn": "Всё сделал как надо: и slider, и progressbar. И ещё много других иностранных слов :)"
     }
 ]

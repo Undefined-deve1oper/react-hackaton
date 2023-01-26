@@ -1,27 +1,19 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { declOfNum, getAge } from "../../../utils/helpFunctions";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Button from "../Button";
 import SvgIcon from "../SvgIcon";
 import Badge from "../Badge";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { getQualitiesListByIds } from "../../../store/slices/qualities";
 import { getDeveloperById } from "../../../store/slices/developers";
-import { createFavourite } from "../../../store/slices/favourites";
+import FavouriteButton from "../FavouriteButton";
 
 const DeveloperCard = ({ id, type = "list" }) => {
     const developer = useSelector(getDeveloperById(id));
     const qualities = useSelector(getQualitiesListByIds(developer.qualities));
-    const dispatch = useDispatch();
-    const [fav, setFav] = useState(true);
-
     const age = getAge(developer.birthDate);
-
-    const handlerFav = () => {
-        setFav((prev) => !prev);
-        dispatch(createFavourite(developer));
-    };
 
     return (
         <div className={`team-list-card ${type}`}>
@@ -35,12 +27,10 @@ const DeveloperCard = ({ id, type = "list" }) => {
                         <Button
                             styleType="none"
                             className="team-list-card_favourite"
-                            onClick={handlerFav}
                         >
-                            <SvgIcon
-                                name="heart"
-                                svgClass={fav ? "favourite-active" : ""}
-                            />
+                            {developer.id && (
+                                <FavouriteButton id={developer.id} />
+                            )}
                         </Button>
                     </div>
                 </div>

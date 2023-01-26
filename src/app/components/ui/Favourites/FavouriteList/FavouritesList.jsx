@@ -4,13 +4,13 @@ import FavouriteItem from "../FavouriteItem";
 
 const FavouritesList = ({ favourites }) => {
     return (
-        <ul style={{ marginTop: "60px" }}>
+        <div className={`team-list list`} style={{ margin: "30px 0px" }}>
             {favourites.map((fav) => (
-                <li key={fav.id}>
+                <div key={fav.id} className="team-list_item">
                     <FavouriteItem devId={fav.personId} />
-                </li>
+                </div>
             ))}
-        </ul>
+        </div>
     );
 };
 

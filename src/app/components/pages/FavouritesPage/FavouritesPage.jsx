@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getIsLoggedIn } from "../../../store/slices/auth";
 import { getFavourites } from "../../../store/slices/favourites";
+import DeveloperList from "../../common/DeveloperList";
 import FavouritesList from "../../ui/Favourites/FavouriteList";
 
 const FavouritesPage = () => {
@@ -45,16 +46,19 @@ const FavouritesPage = () => {
                     </div>
                 )}
                 {isLoggedin && favourites.length ? (
-                    <div style={{ fontSize: "26px" }}>
+                    <div
+                        className="team-list-block"
+                        style={{ fontSize: "26px" }}
+                    >
                         <h1
                             style={{
                                 margin: "20px auto",
                                 textAlign: "center",
                                 padding: "10px",
-                                backgroundColor: "#61dafb",
-                                color: "black",
+                                backgroundColor: "#8e63d2",
+                                color: "#fff",
                                 width: "40%",
-                                borderRadius: "10px"
+                                borderRadius: "12px"
                             }}
                         >
                             избранное:
@@ -66,9 +70,9 @@ const FavouritesPage = () => {
                         style={{
                             display: "flex",
                             justifyContent: "center",
+                            alignItems: "center",
                             width: "100%",
-                            height: "70vh",
-                            alignItems: "center"
+                            height: "60vh"
                         }}
                     >
                         <h1>ничего не добавлено в избранное</h1>

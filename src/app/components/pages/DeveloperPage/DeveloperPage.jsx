@@ -6,42 +6,27 @@ import {
     random
 } from "../../../utils/helpFunctions";
 import Button from "../../common/Button";
-import SvgIcon from "../../common/SvgIcon";
 import Badge from "../../common/Badge";
 import ProgressBar from "../../common/ProgressBar";
 import MainSlider from "../../ui/MainSlider";
 import { getDeveloperById } from "../../../store/slices/developers";
 import { useParams } from "react-router";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { getQualitiesListByIds } from "../../../store/slices/qualities";
 import ReviewsList from "../../ui/Reviews/ReviewsList/ReviewsList";
-import { getAuthUserId, getIsLoggedIn } from "../../../store/slices/auth";
 import StyledNavLink from "../../common/StyledNavLink";
 import ReviewsForm from "../../ui/Forms/ReviewsForm/ReviewsForm";
-import { createFavourite } from "../../../store/slices/favourites";
-import { nanoid } from "@reduxjs/toolkit";
+import { getIsLoggedIn } from "../../../store/slices/auth";
+import FavouriteButton from "../../common/FavouriteButton";
 
 const DeveloperPage = () => {
     const { developerId } = useParams();
     const developer = useSelector(getDeveloperById(developerId));
     const qualities = useSelector(getQualitiesListByIds(developer.qualities));
-    const [fav, setFav] = useState(true);
     const age = getAge(developer.birthDate);
     const types = ["horizontal", "circle"];
     const currentType = types[random(0, types.length - 1)];
     const isLoggedIn = useSelector(getIsLoggedIn());
-    const userId = useSelector(getAuthUserId());
-    const dispatch = useDispatch();
-
-    const handlerFav = () => {
-        const favourite = {
-            pageId: developerId,
-            userId,
-            id: nanoid()
-        };
-        dispatch(createFavourite(favourite));
-        setFav((prev) => !prev);
-    };
 
     if (developer && qualities) {
         return (
@@ -53,12 +38,8 @@ const DeveloperPage = () => {
                             <Button
                                 styleType="none"
                                 className="developer-card_favourite"
-                                onClick={handlerFav}
                             >
-                                <SvgIcon
-                                    name="heart"
-                                    svgClass={fav ? "favourite-active" : ""}
-                                />
+                                <FavouriteButton id={developerId} />
                             </Button>
                         </div>
 

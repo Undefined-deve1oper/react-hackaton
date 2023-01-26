@@ -1,13 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser } from "../../../../store/slices/auth";
-import { createComment } from "../../../../store/slices/comments";
 import { useParams } from "react-router-dom";
 import { rewiewsValidatorConfig } from "../../../../utils/validatorConfig";
 import { nanoid } from "@reduxjs/toolkit";
 import FormComponent, { TextField } from "../../../common/Fields";
 import useForm from "../../../../hooks/useForm";
 import Button from "../../../common/Button";
+import { createComment } from "../../../../store/slices/comments";
 
 const initialState = { review: "" };
 
@@ -20,7 +20,7 @@ const ReviewsForm = () => {
         rewiewsValidatorConfig
     );
 
-    const handleSubmit = (e) => {
+    const handleSubmit = () => {
         if (validate(data)) {
             const comment = {
                 id: nanoid(),

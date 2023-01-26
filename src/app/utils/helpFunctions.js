@@ -1,3 +1,5 @@
+import { nanoid } from "@reduxjs/toolkit";
+
 export function declOfNum(n, text_forms) {
     n = Math.abs(n) % 100;
     const n1 = n % 10;
@@ -41,3 +43,7 @@ export function getRandomColor() {
     }
     return color;
 }
+
+export const getRandomId = () => {
+    return nanoid();
+};
